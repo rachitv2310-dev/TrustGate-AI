@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify - TrustGate-AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+
+    <h1>TrustGate-AI</h1>
+
+</header>
+
+<main>
+
+   <section>
+
+    <h2>Verification Portal</h2>
+
+    <p>
+        Paste your question and AI-generated response below.
+    </p>
+
+    <form action="/verify" method="POST">
+
+        <label for="question">
+            Question
+        </label>
+
+        <textarea
+            id="question"
+            name="question"
+            rows="4"
+            placeholder="Enter your question..."
+        ></textarea>
+
+        <label for="response">
+            AI Response
+        </label>
+
+        <textarea
+            id="response"
+            name="response"
+            rows="8"
+            placeholder="Paste the AI-generated response..."
+        ></textarea>
+
+        <button type="submit">
+            Verify Response
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="result-box">
+
+    <h3>Verification Result</h3>
+
+    {% if result.success %}
+<p class="success-status">
+    <strong>Status:</strong> Success ✅
+</p>
+
+        <p><strong>Question:</strong></p>
+        <p>{{ result.question }}</p>
+
+        <p><strong>AI Response:</strong></p>
+        <p>{{ result.response }}</p>
+
+    {% else %}
+
+        <p class="error-status">
+    <strong>Status:</strong> Failed ❌
+</p>
+
+        <p>{{ result.message }}</p>
+
+    {% endif %}
+
+    </div>
+
+{% endif %}
+
+</section>
+
+</main>
+
+</body>
+</html>
