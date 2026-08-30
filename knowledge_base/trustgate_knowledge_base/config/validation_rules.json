@@ -1,0 +1,76 @@
+{
+  "validation_rules_version": "1.0.0",
+  "description": "Validation checks to be enforced by future ingestion and pipeline processing scripts.",
+  "rules": [
+    {
+      "rule_id": "VAL_001_REGISTERED_DOMAIN",
+      "name": "Registered Source Domain Check",
+      "target_stage": "INGESTION",
+      "description": "Source domain must match an entry in config/trusted_sources.json.",
+      "action_on_failure": "REJECT_OR_FLAG"
+    },
+    {
+      "rule_id": "VAL_002_SOURCE_URL_PRESENT",
+      "name": "Source URL Presence Check",
+      "target_stage": "INGESTION",
+      "description": "Source URL field must be present, non-empty, and a valid URI format.",
+      "action_on_failure": "REJECT"
+    },
+    {
+      "rule_id": "VAL_003_RETRIEVAL_DATE_PRESENT",
+      "name": "Retrieval Timestamp Check",
+      "target_stage": "INGESTION",
+      "description": "Retrieval date must be present as a valid ISO 8601 date-time timestamp.",
+      "action_on_failure": "REJECT"
+    },
+    {
+      "rule_id": "VAL_004_CONTENT_HASH_GENERATED",
+      "name": "Content Hash Check",
+      "target_stage": "INGESTION",
+      "description": "Cryptographic content hash (SHA-256) must be generated from original raw file bytes.",
+      "action_on_failure": "REJECT"
+    },
+    {
+      "rule_id": "VAL_005_RAW_FILE_PRESERVED",
+      "name": "Raw File Storage Verification",
+      "target_stage": "INGESTION",
+      "description": "Original raw document file must exist unmodified in data/raw/.",
+      "action_on_failure": "REJECT"
+    },
+    {
+      "rule_id": "VAL_006_EXTRACTED_CONTENT_NON_EMPTY",
+      "name": "Non-Empty Extracted Text Check",
+      "target_stage": "PROCESSING",
+      "description": "Extracted text content from the document must not be empty or zero-length.",
+      "action_on_failure": "FLAG_FOR_REVIEW"
+    },
+    {
+      "rule_id": "VAL_007_REQUIRED_METADATA_FIELDS",
+      "name": "Metadata Field Completeness Check",
+      "target_stage": "PROCESSING",
+      "description": "All required fields defined in document_metadata_schema.json must be present.",
+      "action_on_failure": "FLAG_FOR_REVIEW"
+    },
+    {
+      "rule_id": "VAL_008_DEDUPLICATION_HASH_CHECK",
+      "name": "Duplicate Content Detection",
+      "target_stage": "PROCESSING",
+      "description": "Detect duplicate documents using content_hash against existing knowledge base records.",
+      "action_on_failure": "FLAG_AS_DUPLICATE"
+    },
+    {
+      "rule_id": "VAL_009_UNREGISTERED_SOURCE_REJECTION",
+      "name": "Unregistered Source Enforcement",
+      "target_stage": "INGESTION",
+      "description": "Documents from unregistered sources must be rejected or placed in quarantine for review if allow_unregistered_sources is false.",
+      "action_on_failure": "REJECT"
+    },
+    {
+      "rule_id": "VAL_010_MISSING_METADATA_QUARANTINE",
+      "name": "Missing or Uncertain Metadata Quarantine",
+      "target_stage": "VALIDATION",
+      "description": "Documents with missing, ambiguous, or unverified metadata must be flagged for manual review.",
+      "action_on_failure": "FLAG_FOR_REVIEW"
+    }
+  ]
+}

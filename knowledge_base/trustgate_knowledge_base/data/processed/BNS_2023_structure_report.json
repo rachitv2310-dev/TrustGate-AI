@@ -1,0 +1,58 @@
+{
+  "document_id": "BNS_2023",
+  "input_file": "data/processed/BNS_2023_text.txt",
+  "output_file": "data/processed/BNS_2023_structure.json",
+  "chapters_detected": 20,
+  "sections_detected": 358,
+  "schedules_detected": 0,
+  "sections_with_missing_headings": 0,
+  "sections_with_missing_page_ranges": 0,
+  "sections_with_invalid_boundaries": 0,
+  "duplicate_section_numbers": 0,
+  "parsing_status": "SUCCESS",
+  "validation_checks": {
+    "check_1_logical_chapter_order": true,
+    "check_2_consistent_section_numbers": true,
+    "check_3_no_duplicate_sections": true,
+    "check_4_no_boundary_overlaps": true,
+    "check_5_offsets_inside_source": true,
+    "check_6_page_markers_valid": true,
+    "check_7_first_last_section_traced": true,
+    "check_8_no_text_rewritten": true,
+    "check_9_text_file_unchanged": true,
+    "check_10_raw_pdf_hash_unchanged": true
+  },
+  "sample_verifications": [
+    {
+      "target": "First Chapter (Chapter I)",
+      "matched": true,
+      "details": "Chapter I (Preliminary), Pages 16-27, Sections 1-3 matched."
+    },
+    {
+      "target": "Section 1 (Short title, commencement and application)",
+      "matched": true,
+      "details": "Section 1, Page 16, Offsets 25359 to 27130 matched."
+    },
+    {
+      "target": "Section 63 (Rape)",
+      "matched": true,
+      "details": "Section 63 (Chapter V), Page 36, Offsets 103980 to 105260 matched."
+    },
+    {
+      "target": "Section 100 (Culpable homicide)",
+      "matched": true,
+      "details": "Section 100 (Chapter VI), Page 39, Offsets 135408 to 136270 matched."
+    },
+    {
+      "target": "Section 358 (Repeal and savings)",
+      "matched": true,
+      "details": "Section 358 (Chapter XX), Page 111, Offsets 416861 to 418120 matched."
+    },
+    {
+      "target": "Schedules",
+      "matched": true,
+      "details": "0 Schedules present in official BNS 2023 text (confirmed)."
+    }
+  ],
+  "notes": "Parsed all 20 Chapters and 358 Sections of Bharatiya Nyaya Sanhita, 2023. All 10 validation checks passed clean. Status: SUCCESS."
+}

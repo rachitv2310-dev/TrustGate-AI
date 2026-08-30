@@ -1,0 +1,82 @@
+{
+  "document_id": "BNS_2023",
+  "verification_architecture": "Deterministic Multi-Feature Claim-Evidence Verifier",
+  "features": [
+    "retrieval_rerank_score",
+    "claim_term_coverage",
+    "lexical_overlap",
+    "explicit_section_match",
+    "explicit_section_mismatch",
+    "contradiction_polarity",
+    "heading_claim_alignment",
+    "evidence_sufficiency_score"
+  ],
+  "feature_weights": {
+    "rerank_score_weight": 0.3,
+    "coverage_weight": 0.25,
+    "contradiction_penalty_weight": 0.25,
+    "section_heading_weight": 0.2
+  },
+  "verification_formula": "verdict = f(explicit_section_identity, term_coverage, contradiction_indicators, heading_alignment)",
+  "confidence_formula": "confidence = f(evidence_relevance, claim_alignment, support_contradiction_polarity)",
+  "test_claim_count": 12,
+  "verdict_counts": {
+    "supported_count": 6,
+    "refuted_count": 4,
+    "insufficient_evidence_count": 2
+  },
+  "metrics": {
+    "verdict_accuracy": 100.0,
+    "macro_f1": 1.0,
+    "average_confidence": 0.847,
+    "evidence_utilization_rate": 100.0,
+    "fabrication_unsupported_rate": 0.0
+  },
+  "confusion_matrix": {
+    "SUPPORTED": {
+      "SUPPORTED": 6,
+      "REFUTED": 0,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "REFUTED": {
+      "SUPPORTED": 0,
+      "REFUTED": 4,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "INSUFFICIENT_EVIDENCE": {
+      "SUPPORTED": 0,
+      "REFUTED": 0,
+      "INSUFFICIENT_EVIDENCE": 2
+    }
+  },
+  "validation_checks": {
+    "check_1_unique_claim_ids": true,
+    "check_2_single_verdict_per_claim": true,
+    "check_3_valid_verdict_classes": true,
+    "check_4_confidence_bounded_0_1": true,
+    "check_5_verification_score_valid": true,
+    "check_6_evidence_chunks_exist_in_dataset": true,
+    "check_7_no_new_legal_text_generated": true,
+    "check_8_evidence_provenance_preserved": true,
+    "check_9_section_metadata_matches_structure": true,
+    "check_10_page_ranges_valid": true,
+    "check_11_chunk_text_unchanged": true,
+    "check_12_pdf_file_unchanged": true,
+    "check_13_source_text_unchanged": true,
+    "check_14_bm25_index_unchanged": true,
+    "check_15_dense_index_unchanged": true,
+    "check_16_negative_claim_no_false_evidence": true,
+    "check_17_insufficient_cases_not_marked_refuted": true,
+    "check_18_contradictory_evidence_handled_deterministically": true,
+    "check_19_execution_reproducible": true,
+    "check_20_results_traceable_to_retrieved_evidence": true
+  },
+  "provenance": {
+    "document_title": "Bharatiya Nyaya Sanhita, 2023",
+    "raw_pdf_sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5",
+    "source_text_sha256": "f0ee026645e589f3ed7aba4cbbbad60a0a5f2b0a428716e845785acb56d32af5"
+  },
+  "architectural_statement": "Claim\u2013evidence verification is a deterministic evidence assessment layer. It does not constitute independent legal advice, does not replace legal professionals, and does not determine legal truth beyond the available retrieved evidence.",
+  "status": "SUCCESS",
+  "notes": "Completed Claim-Evidence Verification Layer over BNS 2023 evidence benchmark (12 claims). Verdict Accuracy = 100.0%. Status: SUCCESS."
+}

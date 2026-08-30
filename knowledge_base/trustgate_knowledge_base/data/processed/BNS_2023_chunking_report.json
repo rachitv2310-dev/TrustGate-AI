@@ -1,0 +1,158 @@
+{
+  "document_id": "BNS_2023",
+  "input_structure": "data/processed/BNS_2023_structure.json",
+  "input_text": "data/processed/BNS_2023_text.txt",
+  "output_chunks": "data/processed/BNS_2023_chunks.jsonl",
+  "sections_total": 358,
+  "sections_covered": 358,
+  "total_chunks": 392,
+  "sections_split": 23,
+  "sections_unsplit": 335,
+  "minimum_section_words": 20,
+  "maximum_section_words": 2585,
+  "average_section_words": 186.89,
+  "median_section_words": 118.5,
+  "chunking_threshold": "500 words / ~2,500 characters",
+  "chunking_strategy": "Legal-aware section preservation. Sections <= 500 words remain intact as single retrieval units. Sections > 500 words are split along legal boundaries (subsections, explanations, exceptions, paragraph breaks) while retaining complete legal provenance, section identity, and page bounds.",
+  "validation_checks": {
+    "check_1_exactly_358_sections": true,
+    "check_2_no_missing_sections": true,
+    "check_3_no_duplicate_coverage": true,
+    "check_4_unique_chunk_ids": true,
+    "check_5_valid_document_id": true,
+    "check_6_valid_chapter_and_section_numbers": true,
+    "check_7_valid_page_ranges": true,
+    "check_8_valid_text_offsets": true,
+    "check_9_offsets_within_parent_section": true,
+    "check_10_reconstruction_validation": true,
+    "check_11_no_cross_section_mixing": true,
+    "check_12_no_text_rewritten": true,
+    "check_13_text_file_unchanged": true,
+    "check_14_raw_pdf_unchanged": true,
+    "check_15_raw_pdf_hash_unchanged": true
+  },
+  "sample_verifications": [
+    {
+      "target": "Section 1 (Short title, commencement and application)",
+      "section_number": "1",
+      "chunk_id": "BNS_2023_CH01_SEC1_CHUNK01",
+      "total_chunks": 1,
+      "page_range": [
+        16,
+        16
+      ],
+      "offsets": [
+        25359,
+        27130
+      ],
+      "status": "PASSED"
+    },
+    {
+      "target": "Section 2 (Definitions - Split Section)",
+      "section_number": "2",
+      "chunk_id": "BNS_2023_CH01_SEC2_CHUNK01 .. CHUNK06",
+      "total_chunks": 6,
+      "page_range": [
+        16,
+        20
+      ],
+      "offsets": [
+        27130,
+        40759
+      ],
+      "status": "PASSED"
+    },
+    {
+      "target": "Section 63 (Rape)",
+      "section_number": "63",
+      "chunk_id": "BNS_2023_CH05_SEC63_CHUNK01",
+      "total_chunks": 1,
+      "page_range": [
+        36,
+        37
+      ],
+      "offsets": [
+        103980,
+        105260
+      ],
+      "status": "PASSED"
+    },
+    {
+      "target": "Section 100 (Culpable homicide)",
+      "section_number": "100",
+      "chunk_id": "BNS_2023_CH06_SEC100_CHUNK01",
+      "total_chunks": 1,
+      "page_range": [
+        39,
+        40
+      ],
+      "offsets": [
+        135408,
+        136270
+      ],
+      "status": "PASSED"
+    },
+    {
+      "target": "Section 101 (Murder - Split Section)",
+      "section_number": "101",
+      "chunk_id": "BNS_2023_CH06_SEC101_CHUNK01 .. CHUNK03",
+      "total_chunks": 3,
+      "page_range": [
+        40,
+        41
+      ],
+      "offsets": [
+        136270,
+        143263
+      ],
+      "status": "PASSED"
+    },
+    {
+      "target": "Section 255 (Public servant disobeying direction of law)",
+      "section_number": "255",
+      "chunk_id": "BNS_2023_CH14_SEC255_CHUNK01",
+      "total_chunks": 1,
+      "page_range": [
+        80,
+        81
+      ],
+      "offsets": [
+        288313,
+        289068
+      ],
+      "status": "PASSED"
+    },
+    {
+      "target": "Section 356 (Defamation - Split Section)",
+      "section_number": "356",
+      "chunk_id": "BNS_2023_CH19_SEC356_CHUNK01 .. CHUNK03",
+      "total_chunks": 3,
+      "page_range": [
+        107,
+        109
+      ],
+      "offsets": [
+        404090,
+        414070
+      ],
+      "status": "PASSED"
+    },
+    {
+      "target": "Section 358 (Repeal and savings)",
+      "section_number": "358",
+      "chunk_id": "BNS_2023_CH20_SEC358_CHUNK01",
+      "total_chunks": 1,
+      "page_range": [
+        111,
+        111
+      ],
+      "offsets": [
+        416861,
+        418120
+      ],
+      "status": "PASSED"
+    }
+  ],
+  "status": "SUCCESS",
+  "notes": "Generated 392 retrieval-ready legal chunks for all 358 sections of BNS 2023. 335 sections kept intact, 23 long sections split legally. 100% reconstruction check passed clean. Status: SUCCESS."
+}

@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LegalKnowledgeBaseDataset",
+  "description": "Schema for validating individual legal knowledge base section records and dataset files.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "total_records",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "total_records": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/LegalSectionRecord"
+      }
+    }
+  },
+  "definitions": {
+    "LegalSectionRecord": {
+      "type": "object",
+      "required": [
+        "document_id",
+        "act_name",
+        "act_number",
+        "section_number",
+        "section_title",
+        "chapter",
+        "chapter_title",
+        "text",
+        "source_type",
+        "authority",
+        "jurisdiction",
+        "effective_date",
+        "source_url",
+        "retrieval_date",
+        "source_status",
+        "notes"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Z0-9_]+_SEC_[A-Z0-9_]+$",
+          "description": "Unique identifier for the legal section record."
+        },
+        "act_name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Official title of the Act."
+        },
+        "act_number": {
+          "type": "string",
+          "description": "Official Act number or legislation number."
+        },
+        "section_number": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Exact section number as specified in the Act."
+        },
+        "section_title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Official heading or title of the section."
+        },
+        "chapter": {
+          "type": "string",
+          "description": "Chapter number or designation."
+        },
+        "chapter_title": {
+          "type": "string",
+          "description": "Title or heading of the Chapter."
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Unmodified statutory text of the section."
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "Primary_Law",
+            "Subordinate_Legislation",
+            "Constitutional_Provision",
+            "Statute"
+          ],
+          "description": "Classification of the legal source."
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Enacting authority."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "enum": ["India"],
+          "description": "Legal jurisdiction."
+        },
+        "effective_date": {
+          "type": ["string", "null"],
+          "pattern": "^$|^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "Date when the section became effective (YYYY-MM-DD or null)."
+        },
+        "source_url": {
+          "type": "string",
+          "minLength": 1,
+          "format": "uri",
+          "description": "Official source URL from which the record was retrieved."
+        },
+        "retrieval_date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "Date when the record was fetched from the source (YYYY-MM-DD)."
+        },
+        "source_status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "UNVERIFIED",
+            "PENDING_OFFICIAL_VERIFICATION"
+          ],
+          "description": "Verification status of the legal section record."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional notes, context, or verification explanations."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

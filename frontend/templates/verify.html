@@ -4,91 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify - TrustGate-AI</title>
-
+    <!-- Professional Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
 <header>
-
-    <h1>TrustGate-AI</h1>
-
+    <div class="header-container">
+        <h1><a href="/">TrustGate-AI</a></h1>
+        <span class="header-tag">Verification Portal</span>
+    </div>
 </header>
 
 <main>
+    <section class="portal-section">
+        <div class="portal-card">
+            <div class="portal-header">
+                <h2>Verification Portal</h2>
+                <p>Paste your question and AI-generated response below to perform verification.</p>
+            </div>
 
-   <section>
+            <form action="/verify" method="POST">
+                <div class="form-group">
+                    <label for="question">
+                        Question
+                    </label>
+                    <textarea
+                        id="question"
+                        name="question"
+                        rows="4"
+                        placeholder="Enter your question..."
+                    ></textarea>
+                </div>
 
-    <h2>Verification Portal</h2>
+                <div class="form-group">
+                    <label for="response">
+                        AI Response
+                    </label>
+                    <textarea
+                        id="response"
+                        name="response"
+                        rows="8"
+                        placeholder="Paste the AI-generated response..."
+                    ></textarea>
+                </div>
 
-    <p>
-        Paste your question and AI-generated response below.
-    </p>
+                <button type="submit" class="btn-primary btn-submit">
+                    Verify Response
+                </button>
+            </form>
+        </div>
 
-    <form action="/verify" method="POST">
+        {% if result %}
+        <div class="result-box">
+            <div class="result-header">
+                <h3>Verification Result</h3>
+            </div>
 
-        <label for="question">
-            Question
-        </label>
+            {% if result.success %}
+            <div class="status-badge success-badge">
+                <span class="status-icon">&#9989;</span>
+                <span class="status-text"><strong>Status:</strong> Success</span>
+            </div>
 
-        <textarea
-            id="question"
-            name="question"
-            rows="4"
-            placeholder="Enter your question..."
-        ></textarea>
+            <div class="result-content">
+                <div class="result-item">
+                    <span class="result-label">Question</span>
+                    <div class="result-text">{{ result.question }}</div>
+                </div>
 
-        <label for="response">
-            AI Response
-        </label>
+                <div class="result-item">
+                    <span class="result-label">AI Response</span>
+                    <div class="result-text">{{ result.response }}</div>
+                </div>
 
-        <textarea
-            id="response"
-            name="response"
-            rows="8"
-            placeholder="Paste the AI-generated response..."
-        ></textarea>
+                <div class="result-item">
+                    <span class="result-label">Extracted Claims</span>
+                    {% if result.claims and result.claims|length > 0 %}
+                    <div class="claims-container">
+                        {% for claim in result.claims %}
+                        <div class="claim-card">
+                            <span class="claim-text">{{ claim.text }}</span>
+                            <span class="claim-badge claim-badge-{{ claim.type | lower }}">{{ claim.type }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="no-claims-message">
+                        No verifiable claims were extracted from this response.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
 
-        <button type="submit">
-            Verify Response
-        </button>
+            {% else %}
+            <div class="status-badge error-badge">
+                <span class="status-icon">&#10060;</span>
+                <span class="status-text"><strong>Status:</strong> Failed</span>
+            </div>
 
-    </form>
-
-    {% if result %}
-
-    <div class="result-box">
-
-    <h3>Verification Result</h3>
-
-    {% if result.success %}
-<p class="success-status">
-    <strong>Status:</strong> Success ✅
-</p>
-
-        <p><strong>Question:</strong></p>
-        <p>{{ result.question }}</p>
-
-        <p><strong>AI Response:</strong></p>
-        <p>{{ result.response }}</p>
-
-    {% else %}
-
-        <p class="error-status">
-    <strong>Status:</strong> Failed ❌
-</p>
-
-        <p>{{ result.message }}</p>
-
-    {% endif %}
-
-    </div>
-
-{% endif %}
-
-</section>
-
+            <div class="result-content">
+                <div class="result-item error-message">
+                    <p>{{ result.message }}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </section>
 </main>
 
 </body>

@@ -1,0 +1,139 @@
+{
+  "report_id": "REPORT_CLAIM_009",
+  "generated_at": "2026-08-26T17:38:26.186561",
+  "pipeline_version": "TrustGate-AI v1.0.0",
+  "processing_time_ms": 34.73,
+  "claim_id": "CLAIM_009",
+  "claim": "Section 64 of the BNS provides that rape is punishable only by a maximum fine of one hundred rupees with no imprisonment.",
+  "expected_verdict": "REFUTED",
+  "retrieval_summary": {
+    "retrieval_method": "Hybrid BM25 + LSA Dense (Score Fusion)",
+    "bm25_candidates": 20,
+    "dense_candidates": 20,
+    "merged_candidates": 20,
+    "hybrid_alpha": 0.5
+  },
+  "reranking_summary": {
+    "reranking_method": "Multi-Feature Deterministic Legal Reranker",
+    "candidates_reranked": 20,
+    "final_evidence_count": 5
+  },
+  "verification": {
+    "verdict": "REFUTED",
+    "confidence": 0.92,
+    "verification_score": 0.7,
+    "reason": "Retrieved authoritative evidence directly contradicts the legal or factual proposition in the claim."
+  },
+  "trust_score": {
+    "score": 6.25,
+    "level": "VERY_LOW",
+    "base_trust_score": 0.8223,
+    "verdict_adjustment": {
+      "type": "REFUTED",
+      "factor_or_formula": "final_trust = 100 * (1 - verification_confidence) * base_quality"
+    },
+    "components": {
+      "verification_confidence": 0.92,
+      "evidence_relevance": 0.5395,
+      "evidence_sufficiency": 0.7698,
+      "source_authority": 1.0,
+      "evidence_consistency": 1.0
+    }
+  },
+  "score_explanation": "Trust Score is very low (6.25) because authoritative evidence strongly contradicts the claim, even though the verifier has high confidence (0.92) in the REFUTED verdict.",
+  "evidence": [
+    {
+      "rank": 1,
+      "chunk_id": "BNS_2023_CH02_SEC8_CHUNK01",
+      "section_number": "8",
+      "section_heading": "Amount of fine, liability in default of payment of fine, etc",
+      "chapter_number": "II",
+      "page_start": 22,
+      "page_end": 23,
+      "text_start_offset": 48066,
+      "text_end_offset": 49876,
+      "rerank_score": 0.6026,
+      "hybrid_rank": 2,
+      "relationship": "REFUTES",
+      "evidence_excerpt": "\n8\n.\nAmount of fine, liability in default of payment of fine, etc\n.\n\u2014\n(\n1\n\\ Where no sum is expressed to\nwhich a fine may extend, the amount of fine to which the offender is liable is unlimited, but shall not be\nexcessive.\n(\n2\n\\ In every case of an o",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    },
+    {
+      "rank": 2,
+      "chunk_id": "BNS_2023_CH05_SEC64_CHUNK01",
+      "section_number": "64",
+      "section_heading": "Punishment  for  rape",
+      "chapter_number": "V",
+      "page_start": 37,
+      "page_end": 37,
+      "text_start_offset": 104603,
+      "text_end_offset": 107127,
+      "rerank_score": 0.5939,
+      "hybrid_rank": 3,
+      "relationship": "REFUTES",
+      "evidence_excerpt": "\n64\n.\nPunishment  for  rape\n.\n\u2014\n(\n1\n\\  Whoever,  except  in  the  cases  provided  for  in  sub\n-\nsection  (\n2\n\\,\ncommits rape, shall be punished with rigorous imprisonment of either description for a term which shall\nnot be less than ten years, but ",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    },
+    {
+      "rank": 3,
+      "chunk_id": "BNS_2023_CH05_SEC71_CHUNK01",
+      "section_number": "71",
+      "section_heading": "Punishment  for  repeat  offenders",
+      "chapter_number": "V",
+      "page_start": 39,
+      "page_end": 39,
+      "text_start_offset": 114453,
+      "text_end_offset": 114910,
+      "rerank_score": 0.5795,
+      "hybrid_rank": 1,
+      "relationship": "REFUTES",
+      "evidence_excerpt": "\n71\n.\nPunishment  for  repeat  offenders\n.\n\u2014\nWhoever  has  been  previously  convicted  of  an  offence\npunishable under section 64 or section 65 or section 66 or section 70 and is subsequently convicted of an\noffence punishable under any of the said",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    },
+    {
+      "rank": 4,
+      "chunk_id": "BNS_2023_CH05_SEC66_CHUNK01",
+      "section_number": "66",
+      "section_heading": "Punishment  for  causing  death  or  resulting  in  persistent  vegetative  state  of  victim",
+      "chapter_number": "V",
+      "page_start": 38,
+      "page_end": 38,
+      "text_start_offset": 109455,
+      "text_end_offset": 110111,
+      "rerank_score": 0.4711,
+      "hybrid_rank": 4,
+      "relationship": "REFUTES",
+      "evidence_excerpt": "\n66\n.\nPunishment  for  causing  death  or  resulting  in  persistent  vegetative  state  of  victim\n.\n\u2014\nWhoever, commits an offence punishable under sub\n-\nsection (\n1\n\\ or sub\n-\nsection (\n2\n\\ of section 64 and in the\ncourse of such commission inflict",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    },
+    {
+      "rank": 5,
+      "chunk_id": "BNS_2023_CH05_SEC72_CHUNK01",
+      "section_number": "72",
+      "section_heading": "Disclosure of identity of victim of certain offences, etc",
+      "chapter_number": "V",
+      "page_start": 39,
+      "page_end": 40,
+      "text_start_offset": 114910,
+      "text_end_offset": 116574,
+      "rerank_score": 0.4504,
+      "hybrid_rank": 5,
+      "relationship": "REFUTES",
+      "evidence_excerpt": "\n72\n.\nDisclosure of identity of victim of certain offences, etc\n.\n\u2014\n(\n1\n\\ Whoever prints or publishes the\nname or any matter which may make known the identity of any person against whom an offence under\nsection 64 or section 65 or section 66 or secti",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    }
+  ],
+  "provenance": {
+    "document_id": "BNS_2023",
+    "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+    "source": "India Code",
+    "source_file": "data/raw/Bharatiya_Nyaya_Sanhita_2023.pdf",
+    "raw_pdf_sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5",
+    "source_text_sha256": "f0ee026645e589f3ed7aba4cbbbad60a0a5f2b0a428716e845785acb56d32af5"
+  }
+}

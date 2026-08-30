@@ -1,4 +1,61 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# Environment Variables
 .env
-.vscode/settings.json
+.env.local
+.env.*.local
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Pytest / Test Artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Knowledge Base & Corpus Data Files (Keep structure via .gitkeep)
+knowledge_base/raw/*
+!knowledge_base/raw/.gitkeep
+
+knowledge_base/processed/*
+!knowledge_base/processed/.gitkeep
+
+knowledge_base/metadata/*
+!knowledge_base/metadata/.gitkeep

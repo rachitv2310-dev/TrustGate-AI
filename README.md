@@ -1,161 +1,98 @@
 # TrustGate-AI
 
-> Building Trust in AI Responses Through Intelligent Verification
+**TrustGate-AI** is a modular, claim-level verification system for detecting hallucinations and evaluating evidence grounding in AI-generated responses within the Indian legal domain.
 
 ---
 
-**Version:** 1.0
+## Architecture Overview
 
-**Status:** Draft
+TrustGate-AI processes responses through a modular 5-step pipeline:
 
-**Last Updated:** 22 July 2026
-
-**Owner:** TrustGate-AI Team
-
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Problem Statement](#problem-statement)
-- [Proposed Solution](#proposed-solution)
-- [Core Features](#core-features)
-- [High-Level Workflow](#high-level-workflow)
-- [Project Structure](#project-structure)
-- [Development Roadmap](#development-roadmap)
-- [Current Development Status](#current-development-status)
-- [License](#license)
-- [Authors](#authors)
+1. **Input Ingestion**: Accepts user legal prompt and AI response.
+2. **Claim Extraction**: Decomposes paragraphs into atomic factual claims using configurable local LLMs (`qwen2.5:3b` / Ollama).
+3. **Evidence Retrieval**: Queries legal knowledge bases for supporting/contradicting evidence passages.
+4. **Claim-Evidence Verification**: Evaluates claim stance (`SUPPORTED`, `CONTRADICTED`, `INSUFFICIENT`) using configurable verifier LLMs (`gemma3:4b` / Ollama).
+5. **Trust Score Calculation**: Produces claim-level verdicts and an overall transparent trust report.
 
 ---
-
-## Overview
-
-TrustGate-AI is an AI-powered web-based verification system designed to improve the reliability of AI-generated responses. Instead of asking users to blindly trust chatbot outputs, the system verifies factual claims using trusted knowledge sources, semantic verification techniques, and rule-based validation. The final output is presented as a Verification Report containing an explainable Trust Score, verification status, supporting evidence, and transparent reasoning, enabling users to confidently assess the reliability of AI-generated information.
-
-## Problem Statement
-
-The rapid adoption of AI chatbots has made information more accessible than ever. However, users often struggle to determine whether AI-generated responses are factually reliable. Since AI systems can occasionally produce inaccurate or unsupported information, manually verifying every response is both time-consuming and impractical. This creates a trust gap between AI-generated content and user confidence. TrustGate-AI addresses this challenge by providing an intelligent verification layer that evaluates AI-generated responses using trusted knowledge sources and presents transparent verification results.
-
-## Proposed Solution
-
-TrustGate-AI provides an intelligent verification framework that analyzes AI-generated responses before users rely on them. The system extracts factual claims from the response, retrieves supporting evidence from trusted knowledge sources, performs semantic verification and rule-based validation, and generates an explainable Trust Score. Instead of replacing existing AI assistants, TrustGate-AI acts as a verification layer that helps users understand how trustworthy an AI-generated response is through a transparent Verification Report.
-
-## Core Features
-
-- AI Response Verification
-- Factual Claim Extraction
-- Trusted Evidence Retrieval
-- Semantic Verification
-- Rule-Based Validation
-- Explainable Trust Score
-- Verification Report Generation
-
-## High-Level Workflow
-
-```text
-User Question
-        │
-        ▼
-AI Response
-        │
-        ▼
-Claim Extraction
-        │
-        ▼
-Evidence Retrieval
-        │
-        ▼
-Semantic Verification
-        │
-        ▼
-Rule-Based Validation
-        │
-        ▼
-Trust Score Engine
-        │
-        ▼
-Verification Report
-```
 
 ## Project Structure
 
 ```text
-TrustGate-AI/
-│
-├── README.md
-├── LICENSE
-├── .gitignore
-│
-├── docs/
+trustgate-ai/
 │
 ├── backend/
+│   ├── app/
+│   │   ├── main.py               # FastAPI entry point & health check
+│   │   ├── config.py             # Configurable settings (.env)
+│   │   ├── api/routes/verify.py  # Verification API routes
+│   │   ├── schemas/              # Pydantic schemas (Claim, Verification, Report)
+│   │   ├── services/             # Core business logic services
+│   │   ├── retrieval/            # Chunking, Embeddings & Vector Store interfaces
+│   │   └── database/             # Database connection setup
+│   ├── requirements.txt          # Minimum required dependencies
+│   └── .env.example              # Environment variables template
 │
-├── frontend/
+├── knowledge_base/
+│   ├── raw/                      # Raw legal texts
+│   ├── processed/                # Chunked data & vector indexes
+│   └── metadata/                 # Corpus metadata
 │
-├── tests/
-│
-├── benchmarks/
-│
-└── assets/
+├── frontend/                     # Web UI placeholder
+├── docs/                         # Architecture documentation
+└── README.md
 ```
 
-## Development Roadmap
-
-The development of TrustGate-AI follows an incremental engineering approach where each phase is completed, reviewed, and approved before moving to the next stage.
-
-```text
-Phase 1
-Planning & Design
-        │
-        ▼
-Phase 2
-Documentation
-        │
-        ▼
-Phase 3
-Core Development
-        │
-        ▼
-Phase 4
-Testing & Benchmarking
-        │
-        ▼
-Phase 5
-Final Deployment
-```
-## Technology Stack
-
-| Component | Technology |
-|-----------|------------|
-| Programming Language | Python |
-| Backend Framework | Flask |
-| Frontend | HTML, CSS, JavaScript |
-| Database | SQLite |
-| Semantic Verification | Sentence Transformers (SBERT) |
-| AI Integration | Large Language Model (Configurable) |
-| Development Tools | Git, GitHub, Visual Studio Code |
+---
 
 ## Current Development Status
 
-**Current Phase:** Planning & Documentation
-
-The project is currently in the planning and documentation phase. All architectural decisions are being finalized before implementation begins. This approach ensures a well-structured, maintainable, and production-oriented development process.
-
----
-
-## License
-
-This project is currently under active academic development.
-
-The license will be finalized before the first public release.
+- [x] Initial modular project folder structure & starter boilerplate
+- [x] FastAPI application with `/health` endpoint
+- [x] Configurable Ollama model settings (`config.py` / `.env`)
+- [x] Pydantic schemas for Claim, Request, and Report models
+- [ ] Atomic claim extraction service implementation (Phase 2)
+- [ ] Legal knowledge base ingestion & hybrid retrieval pipeline (Phase 3)
+- [ ] Claim verification & trust scoring engine (Phase 4)
 
 ---
 
-## Authors
+## Installation & Quick Start
 
-**TrustGate-AI Team**
+### 1. Requirements
+- Python 3.10+
+- Local [Ollama](https://ollama.com/) instance with models installed:
+  ```bash
+  ollama pull qwen2.5:3b
+  ollama pull gemma3:4b
+  ```
 
-Department of Information Technology
+### 2. Setup Environment
+```bash
+cd backend
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+# On Linux/macOS:
+source venv/bin/activate
 
-Academic Project
+pip install -r requirements.txt
+cp .env.example .env
+```
+
+### 3. Run FastAPI Backend
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
+Verify health check endpoint:
+```bash
+curl http://localhost:8000/health
+```
+Response:
+```json
+{
+  "status": "ok",
+  "service": "TrustGate-AI"
+}
+```

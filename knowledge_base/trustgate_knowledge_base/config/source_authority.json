@@ -1,0 +1,38 @@
+{
+  "policy_name": "TrustGate Source Authority Policy",
+  "version": "1.0.0",
+  "status": "INITIAL_DESIGN_VALUE",
+  "note": "Authority scores in this configuration are initial project design values established for system bootstrapping. They do not represent scientifically established universal truth metrics and are intended to be systematically calibrated and validated through empirical TrustGate experiments and domain expert evaluations.",
+  "tiers": {
+    "tier_1": {
+      "tier_number": 1,
+      "name": "TIER_1_PRIMARY_OFFICIAL",
+      "description": "Primary official legal sources (e.g., India Code, Supreme Court of India, Government Gazettes)",
+      "initial_authority_score": 1.00
+    },
+    "tier_2": {
+      "tier_number": 2,
+      "name": "TIER_2_OFFICIAL_JUDICIARY",
+      "description": "Official judiciary sources (e.g., High Court official portals, eCourts services)",
+      "initial_authority_score": 0.95
+    },
+    "tier_3": {
+      "tier_number": 3,
+      "name": "TIER_3_REPUTABLE_SECONDARY",
+      "description": "Reputable secondary legal sources and commentary",
+      "initial_authority_score": 0.75
+    },
+    "tier_4": {
+      "tier_number": 4,
+      "name": "TIER_4_GENERAL_WEB",
+      "description": "General web sources and non-specialized publications",
+      "initial_authority_score": 0.50
+    },
+    "tier_5": {
+      "tier_number": 5,
+      "name": "TIER_5_UNVERIFIED",
+      "description": "Unverified or unknown sources",
+      "initial_authority_score": 0.20
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "dataset_name": "TrustGate-AI BNS 2023 Claim\u2013Evidence Dataset",
+  "dataset_scope": "Structured, Provenance-Preserved Legal Claim\u2013Evidence Dataset for Training and Evaluation",
+  "total_records": 60,
+  "split_distribution": {
+    "train": 34,
+    "validation": 12,
+    "test": 14
+  },
+  "verdict_distribution": {
+    "SUPPORTED": 18,
+    "REFUTED": 24,
+    "INSUFFICIENT_EVIDENCE": 18
+  },
+  "claim_type_distribution": {
+    "DIRECT_SUPPORTED": 18,
+    "DIRECT_REFUTED": 10,
+    "SECTION_MISMATCH": 8,
+    "CROSS_SECTION_CONFUSION": 6,
+    "PARTIALLY_SUPPORTED": 6,
+    "INSUFFICIENT_EVIDENCE": 8,
+    "OUT_OF_DOMAIN": 4
+  },
+  "hard_negatives_count": 14,
+  "out_of_domain_count": 4,
+  "leakage_analysis": {
+    "train_sections_count": 10,
+    "val_sections_count": 4,
+    "test_sections_count": 4,
+    "section_leakage_detected": false
+  },
+  "provenance_validation": {
+    "raw_pdf_sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5",
+    "raw_pdf_sha256_match": true,
+    "source_text_sha256": "f0ee026645e589f3ed7aba4cbbbad60a0a5f2b0a428716e845785acb56d32af5",
+    "source_text_sha256_match": true,
+    "evidence_traceability_rate": 100.0
+  },
+  "quality_checks": {
+    "check_1_unique_example_ids": true,
+    "check_2_required_fields_present": true,
+    "check_3_valid_verdict_values": true,
+    "check_4_valid_claim_types": true,
+    "check_5_evidence_chunk_ids_exist": true,
+    "check_6_evidence_excerpt_exact_match": true,
+    "check_7_section_metadata_matches_chunk": true,
+    "check_8_page_metadata_matches_chunk": true,
+    "check_9_source_authority_valid": true,
+    "check_10_sha256_provenance_valid": true,
+    "check_11_no_duplicate_claim_pairs": true,
+    "check_12_no_train_val_test_leakage": true,
+    "check_13_no_fabricated_evidence": true,
+    "check_14_no_empty_claims": true,
+    "check_15_non_empty_evidence_for_required_claims": true,
+    "check_16_out_of_domain_zero_false_evidence": true,
+    "check_17_refuted_examples_have_contradictory_evidence": true,
+    "check_18_insufficient_examples_not_marked_refuted": true,
+    "check_19_deterministic_regeneration": true,
+    "check_20_json_schema_valid": true
+  },
+  "architectural_statement": "This dataset is constructed for future use by the TrustGate-AI project. This repository does not contain the final TrustGate-AI application.",
+  "status": "SUCCESS"
+}

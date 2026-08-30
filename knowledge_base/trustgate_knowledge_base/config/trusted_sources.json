@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-08-26",
+  "sources": [
+    {
+      "source_id": "INDIA_CODE",
+      "name": "India Code",
+      "domain": "indiacode.nic.in",
+      "source_type": "PRIMARY_LEGAL_SOURCE",
+      "authority_tier": 1,
+      "authority_score": 1.0,
+      "jurisdiction": "India",
+      "description": "Official repository/reference for Indian legislation",
+      "verification_required": false
+    },
+    {
+      "source_id": "SUPREME_COURT_INDIA",
+      "name": "Supreme Court of India",
+      "domain": "sci.gov.in",
+      "source_type": "PRIMARY_LEGAL_SOURCE",
+      "authority_tier": 1,
+      "authority_score": 1.0,
+      "jurisdiction": "India",
+      "description": "Official portal and judgment repository of the Supreme Court of India",
+      "verification_required": false
+    },
+    {
+      "source_id": "EGAZETTE_INDIA",
+      "name": "eGazette of India",
+      "domain": "egazette.gov.in",
+      "source_type": "PRIMARY_LEGAL_SOURCE",
+      "authority_tier": 1,
+      "authority_score": 1.0,
+      "jurisdiction": "India",
+      "description": "Official gazette notifications published by the Government of India",
+      "verification_required": false
+    },
+    {
+      "source_id": "ECOURTS_INDIA",
+      "name": "eCourts Services",
+      "domain": "ecourts.gov.in",
+      "source_type": "OFFICIAL_JUDICIARY",
+      "authority_tier": 2,
+      "authority_score": 0.95,
+      "jurisdiction": "India",
+      "description": "Official portal for Indian district and subordinate courts",
+      "verification_required": false
+    },
+    {
+      "source_id": "DELHI_HIGH_COURT",
+      "name": "Delhi High Court",
+      "domain": "delhihighcourt.nic.in",
+      "source_type": "OFFICIAL_JUDICIARY",
+      "authority_tier": 2,
+      "authority_score": 0.95,
+      "jurisdiction": "India - Delhi",
+      "description": "Official portal of the High Court of Delhi",
+      "verification_required": false
+    }
+  ]
+}

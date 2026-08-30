@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TrustGate-AI BNS 2023 Claim\u2013Evidence Dataset Schema",
+  "description": "Structured evaluation and training dataset connecting legal claims, expected verdicts, authoritative evidence chunks, relationships, and cryptographic provenance.",
+  "type": "object",
+  "required": [
+    "example_id",
+    "claim_id",
+    "claim_text",
+    "claim_type",
+    "expected_verdict",
+    "is_hard_negative",
+    "negative_type",
+    "difficulty",
+    "generation_method",
+    "validation_status",
+    "split",
+    "primary_section_number",
+    "evidence",
+    "provenance"
+  ],
+  "properties": {
+    "example_id": {
+      "type": "string"
+    },
+    "claim_id": {
+      "type": "string"
+    },
+    "claim_text": {
+      "type": "string"
+    },
+    "claim_type": {
+      "type": "string",
+      "enum": [
+        "DIRECT_SUPPORTED",
+        "DIRECT_REFUTED",
+        "PARTIALLY_SUPPORTED",
+        "INSUFFICIENT_EVIDENCE",
+        "SECTION_MISMATCH",
+        "CROSS_SECTION_CONFUSION",
+        "OUT_OF_DOMAIN"
+      ]
+    },
+    "expected_verdict": {
+      "type": "string",
+      "enum": [
+        "SUPPORTED",
+        "REFUTED",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    "is_hard_negative": {
+      "type": "boolean"
+    },
+    "negative_type": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "EASY",
+        "MEDIUM",
+        "HARD"
+      ]
+    },
+    "generation_method": {
+      "type": "string"
+    },
+    "validation_status": {
+      "type": "string"
+    },
+    "split": {
+      "type": "string",
+      "enum": [
+        "train",
+        "validation",
+        "test"
+      ]
+    },
+    "primary_section_number": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_chunk_id",
+          "evidence_relationship",
+          "section_number",
+          "section_heading",
+          "chapter_number",
+          "page_start",
+          "page_end",
+          "evidence_excerpt",
+          "excerpt_truncated",
+          "source_authority"
+        ],
+        "properties": {
+          "evidence_chunk_id": {
+            "type": "string"
+          },
+          "evidence_relationship": {
+            "type": "string",
+            "enum": [
+              "SUPPORTS",
+              "REFUTES",
+              "INSUFFICIENT"
+            ]
+          },
+          "section_number": {
+            "type": "string"
+          },
+          "section_heading": {
+            "type": "string"
+          },
+          "chapter_number": {
+            "type": "string"
+          },
+          "page_start": {
+            "type": "integer"
+          },
+          "page_end": {
+            "type": "integer"
+          },
+          "evidence_excerpt": {
+            "type": "string"
+          },
+          "excerpt_truncated": {
+            "type": "boolean"
+          },
+          "source_authority": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_document_id",
+        "source_document_title",
+        "source_authority",
+        "raw_pdf_sha256",
+        "source_text_sha256"
+      ],
+      "properties": {
+        "source_document_id": {
+          "type": "string"
+        },
+        "source_document_title": {
+          "type": "string"
+        },
+        "source_authority": {
+          "type": "string"
+        },
+        "raw_pdf_sha256": {
+          "type": "string"
+        },
+        "source_text_sha256": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

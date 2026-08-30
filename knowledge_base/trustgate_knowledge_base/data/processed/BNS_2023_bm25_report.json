@@ -1,0 +1,26 @@
+{
+  "document_id": "BNS_2023",
+  "corpus_size": 392,
+  "retrieval_method": "BM25 (Okapi BM25)",
+  "parameters": {
+    "k1": 1.5,
+    "b": 0.75
+  },
+  "tokenization": "Deterministic English legal tokenizer (lowercasing, alphanumeric + hyphen preservation)",
+  "test_queries_count": 10,
+  "evaluated_queries_count": 9,
+  "metrics": {
+    "hit_at_1": 88.89,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9259
+  },
+  "index_path": "indexes/bm25/",
+  "status": "SUCCESS",
+  "limitations": [
+    "BM25 relies strictly on exact lexical term matching and cannot resolve semantic synonyms (e.g. 'homicide' vs 'killing') without explicit term overlap.",
+    "Short single-word queries (e.g. 'theft') may rank long multi-clause sections containing repeated mentions above the core definition section.",
+    "No semantic reranking or dense embeddings are utilized in this baseline."
+  ],
+  "notes": "Built reproducible local BM25 index over 392 validated BNS chunks. Evaluated on 10 baseline queries: Hit@1 = 88.89%, Hit@3 = 100.0%, MRR = 0.9259. Status: SUCCESS."
+}

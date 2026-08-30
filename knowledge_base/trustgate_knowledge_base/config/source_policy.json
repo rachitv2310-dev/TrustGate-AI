@@ -1,0 +1,51 @@
+{
+  "policy_name": "TrustGate Source Governance & Ingestion Policy",
+  "version": "1.0.0",
+  "allow_unregistered_sources": false,
+  "rules": [
+    {
+      "rule_id": "REGISTRATION_REQUIRED",
+      "description": "Only registered and approved source domains defined in trusted_sources.json are permitted to enter the trusted knowledge base."
+    },
+    {
+      "rule_id": "RAW_IMMUTABILITY",
+      "description": "Raw source documents ingested into data/raw/ must be preserved unchanged and never modified."
+    },
+    {
+      "rule_id": "PROVENANCE_URL_REQUIRED",
+      "description": "Every ingested document must retain its original canonical source URL."
+    },
+    {
+      "rule_id": "RETRIEVAL_DATE_REQUIRED",
+      "description": "Every ingested document must record the exact date and timestamp of retrieval."
+    },
+    {
+      "rule_id": "AUTHORITY_METADATA_REQUIRED",
+      "description": "Every ingested document must be tagged with its source_type and authority_tier."
+    },
+    {
+      "rule_id": "UNAPPROVED_DOMAIN_BLOCK",
+      "description": "Documents originating from unapproved or unregistered domains must not automatically enter the trusted knowledge base."
+    },
+    {
+      "rule_id": "PRIMARY_OVERRIDE_PREVENTION",
+      "description": "Secondary sources must never automatically override primary official legal sources."
+    },
+    {
+      "rule_id": "CONFLICT_RESOLUTION_LOGGING",
+      "description": "If two sources conflict, the higher-authority source should be preferred for ranking, but the conflict must be logged for manual review."
+    },
+    {
+      "rule_id": "AUTHORITY_IS_NOT_TRUTH",
+      "description": "Source authority score is a ranking and prioritization signal only; authority score alone does NOT determine whether a legal claim is true."
+    },
+    {
+      "rule_id": "CLAIM_VERIFICATION_REQUIRED",
+      "description": "Claim verification must evaluate the legal claim directly against the actual extracted evidence text."
+    },
+    {
+      "rule_id": "MISSING_METADATA_FLAG",
+      "description": "Missing, incomplete, or unverifiable source metadata must cause the document to be flagged for review."
+    }
+  ]
+}

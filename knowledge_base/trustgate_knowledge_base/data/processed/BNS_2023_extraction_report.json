@@ -1,0 +1,15 @@
+{
+  "document_id": "BNS_2023",
+  "source_file": "data/raw/Bharatiya_Nyaya_Sanhita_2023.pdf",
+  "output_file": "data/processed/BNS_2023_text.txt",
+  "page_count": 112,
+  "extraction_method": "Pure Python standard library (zlib + PDF stream font CMap decoder)",
+  "ocr_required": false,
+  "character_count": 421241,
+  "word_count": 71414,
+  "non_empty_pages": 112,
+  "empty_pages": 0,
+  "text_extraction_status": "SUCCESS",
+  "quality_check_status": "PASSED_100_PERCENT",
+  "notes": "Extracted 100% machine-readable text across all 112 pages with explicit page boundary markers ([PAGE 1] .. [PAGE 112]). SHA-256 hash verified as d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5."
+}

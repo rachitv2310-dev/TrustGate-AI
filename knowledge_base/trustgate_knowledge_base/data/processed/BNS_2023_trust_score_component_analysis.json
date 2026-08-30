@@ -1,0 +1,218 @@
+[
+  {
+    "claim_id": "CLAIM_001",
+    "verdict": "SUPPORTED",
+    "trust_score": 83.53,
+    "trust_level": "HIGH",
+    "components": {
+      "verification_confidence": 0.95,
+      "evidence_relevance": 0.525,
+      "evidence_sufficiency": 0.81,
+      "source_authority": 1.0,
+      "evidence_consistency": 1.0
+    },
+    "base_trust_score": 0.8353,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    }
+  },
+  {
+    "claim_id": "CLAIM_002",
+    "verdict": "REFUTED",
+    "trust_score": 6.69,
+    "trust_level": "VERY_LOW",
+    "components": {
+      "verification_confidence": 0.91,
+      "evidence_relevance": 0.6185,
+      "evidence_sufficiency": 0.8092,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.5
+    },
+    "base_trust_score": 0.7945,
+    "verdict_adjustment": {
+      "type": "REFUTED",
+      "factor_or_formula": "final_trust = 100 * (1 - verification_confidence) * base_quality"
+    }
+  },
+  {
+    "claim_id": "CLAIM_003",
+    "verdict": "SUPPORTED",
+    "trust_score": 68.52,
+    "trust_level": "MODERATE",
+    "components": {
+      "verification_confidence": 0.95,
+      "evidence_relevance": 0.299,
+      "evidence_sufficiency": 0.7196,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.6852,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    }
+  },
+  {
+    "claim_id": "CLAIM_004",
+    "verdict": "SUPPORTED",
+    "trust_score": 75.6,
+    "trust_level": "HIGH",
+    "components": {
+      "verification_confidence": 0.95,
+      "evidence_relevance": 0.5274,
+      "evidence_sufficiency": 0.8109,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.756,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    }
+  },
+  {
+    "claim_id": "CLAIM_005",
+    "verdict": "SUPPORTED",
+    "trust_score": 71.42,
+    "trust_level": "HIGH",
+    "components": {
+      "verification_confidence": 0.9667,
+      "evidence_relevance": 0.3738,
+      "evidence_sufficiency": 0.7495,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.7142,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    }
+  },
+  {
+    "claim_id": "CLAIM_006",
+    "verdict": "REFUTED",
+    "trust_score": 5.71,
+    "trust_level": "VERY_LOW",
+    "components": {
+      "verification_confidence": 0.91,
+      "evidence_relevance": 0.388,
+      "evidence_sufficiency": 0.694,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.5
+    },
+    "base_trust_score": 0.7196,
+    "verdict_adjustment": {
+      "type": "REFUTED",
+      "factor_or_formula": "final_trust = 100 * (1 - verification_confidence) * base_quality"
+    }
+  },
+  {
+    "claim_id": "CLAIM_007",
+    "verdict": "REFUTED",
+    "trust_score": 5.66,
+    "trust_level": "VERY_LOW",
+    "components": {
+      "verification_confidence": 0.92,
+      "evidence_relevance": 0.448,
+      "evidence_sufficiency": 0.724,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.8
+    },
+    "base_trust_score": 0.7726,
+    "verdict_adjustment": {
+      "type": "REFUTED",
+      "factor_or_formula": "final_trust = 100 * (1 - verification_confidence) * base_quality"
+    }
+  },
+  {
+    "claim_id": "CLAIM_008",
+    "verdict": "SUPPORTED",
+    "trust_score": 86.16,
+    "trust_level": "VERY_HIGH",
+    "components": {
+      "verification_confidence": 0.95,
+      "evidence_relevance": 0.6744,
+      "evidence_sufficiency": 0.8698,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.8
+    },
+    "base_trust_score": 0.8616,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    }
+  },
+  {
+    "claim_id": "CLAIM_009",
+    "verdict": "REFUTED",
+    "trust_score": 6.25,
+    "trust_level": "VERY_LOW",
+    "components": {
+      "verification_confidence": 0.92,
+      "evidence_relevance": 0.5395,
+      "evidence_sufficiency": 0.7698,
+      "source_authority": 1.0,
+      "evidence_consistency": 1.0
+    },
+    "base_trust_score": 0.8223,
+    "verdict_adjustment": {
+      "type": "REFUTED",
+      "factor_or_formula": "final_trust = 100 * (1 - verification_confidence) * base_quality"
+    }
+  },
+  {
+    "claim_id": "CLAIM_010",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "trust_score": 19.8,
+    "trust_level": "VERY_LOW",
+    "components": {
+      "verification_confidence": 0.4818,
+      "evidence_relevance": 0.5303,
+      "evidence_sufficiency": 0.1591,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.4951,
+    "verdict_adjustment": {
+      "type": "INSUFFICIENT_EVIDENCE",
+      "factor_or_formula": "final_trust = 100 * base_trust * 0.4"
+    }
+  },
+  {
+    "claim_id": "CLAIM_011",
+    "verdict": "SUPPORTED",
+    "trust_score": 74.78,
+    "trust_level": "HIGH",
+    "components": {
+      "verification_confidence": 0.9333,
+      "evidence_relevance": 0.5199,
+      "evidence_sufficiency": 0.808,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.7478,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    }
+  },
+  {
+    "claim_id": "CLAIM_012",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "trust_score": 15.05,
+    "trust_level": "VERY_LOW",
+    "components": {
+      "verification_confidence": 0.3222,
+      "evidence_relevance": 0.3166,
+      "evidence_sufficiency": 0.095,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.3762,
+    "verdict_adjustment": {
+      "type": "INSUFFICIENT_EVIDENCE",
+      "factor_or_formula": "final_trust = 100 * base_trust * 0.4"
+    }
+  }
+]

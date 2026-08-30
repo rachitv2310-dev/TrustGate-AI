@@ -1,0 +1,88 @@
+{
+  "document_id": "BNS_2023",
+  "trust_score_architecture": "Multi-Component Deterministic & Verdict-Aware Trust Score Layer",
+  "components": [
+    "verification_confidence",
+    "evidence_relevance",
+    "evidence_sufficiency",
+    "source_authority",
+    "evidence_consistency"
+  ],
+  "component_weights": {
+    "verification_confidence": 0.35,
+    "evidence_relevance": 0.25,
+    "evidence_sufficiency": 0.15,
+    "source_authority": 0.15,
+    "evidence_consistency": 0.1
+  },
+  "base_trust_formula": "base_trust = 0.35 * verification_confidence + 0.25 * evidence_relevance + 0.15 * evidence_sufficiency + 0.15 * source_authority + 0.10 * evidence_consistency",
+  "verdict_adjustment_logic": {
+    "SUPPORTED": "final_trust = 100 * base_trust",
+    "REFUTED": "final_trust = 100 * (1 - verification_confidence) * base_quality",
+    "INSUFFICIENT_EVIDENCE": "final_trust = 100 * base_trust * 0.40"
+  },
+  "trust_level_thresholds": {
+    "VERY_HIGH": "85.00 - 100.00",
+    "HIGH": "70.00 - 84.99",
+    "MODERATE": "50.00 - 69.99",
+    "LOW": "25.00 - 49.99",
+    "VERY_LOW": "0.00 - 24.99"
+  },
+  "benchmark_statistics": {
+    "total_claims": 12,
+    "mean_trust_score": 43.26,
+    "median_trust_score": 44.16,
+    "min_trust_score": 5.66,
+    "max_trust_score": 86.16,
+    "average_supported_score": 76.67,
+    "average_refuted_score": 6.08,
+    "average_insufficient_score": 17.43,
+    "sanity_pattern_passed": true
+  },
+  "sanity_tests": {
+    "test_1_supported_higher_than_insufficient": true,
+    "test_2_refuted_claim_low_score": true,
+    "test_3_out_of_domain_low_score": true,
+    "test_4_relevance_monotonicity": true,
+    "test_5_confidence_supported_monotonicity": true,
+    "test_6_confidence_refuted_inverse": true,
+    "test_7_scores_bounded_0_100": true,
+    "test_8_components_bounded_0_1": true,
+    "test_9_execution_reproducible": true,
+    "test_10_trust_level_mapping_deterministic": true
+  },
+  "validation_checks": {
+    "check_1_all_12_claims_represented": true,
+    "check_2_single_score_per_claim": true,
+    "check_3_all_scores_finite": true,
+    "check_4_scores_within_0_100": true,
+    "check_5_components_within_0_1": true,
+    "check_6_all_5_components_present": true,
+    "check_7_weights_sum_to_1": true,
+    "check_8_verdict_preserved": true,
+    "check_9_confidence_matches_chunk12": true,
+    "check_10_chunk_ids_exist": true,
+    "check_11_provenance_preserved": true,
+    "check_12_source_authority_from_config": true,
+    "check_13_refuted_claims_not_very_high": true,
+    "check_14_out_of_domain_not_high": true,
+    "check_15_insufficient_cases_not_marked_refuted": true,
+    "check_16_reproducible_execution": true,
+    "check_17_no_nan_or_inf_components": true,
+    "check_18_verification_results_unchanged": true,
+    "check_19_chunk_dataset_unchanged": true,
+    "check_20_source_text_unchanged": true,
+    "check_21_bm25_index_unchanged": true,
+    "check_22_dense_index_unchanged": true,
+    "check_23_raw_pdf_hash_unchanged": true,
+    "check_24_traceable_to_artifacts": true
+  },
+  "provenance": {
+    "document_title": "Bharatiya Nyaya Sanhita, 2023",
+    "raw_pdf_sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5",
+    "source_text_sha256": "f0ee026645e589f3ed7aba4cbbbad60a0a5f2b0a428716e845785acb56d32af5"
+  },
+  "architectural_statement": "The Trust Score is an explainable evidence-confidence indicator based on verification results, evidence quality, evidence sufficiency, consistency, and source authority. It is not a determination of legal truth, legal validity, or a substitute for professional legal advice.",
+  "status": "SUCCESS",
+  "notes": "Completed Trust Score Calculation & Evidence Quality Aggregation Layer over BNS 2023 benchmark (12 claims). Status: SUCCESS."
+}

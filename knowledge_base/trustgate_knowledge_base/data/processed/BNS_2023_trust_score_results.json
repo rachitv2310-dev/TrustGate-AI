@@ -1,0 +1,446 @@
+[
+  {
+    "claim_id": "CLAIM_001",
+    "claim": "Section 103 of the BNS prescribes punishment for murder.",
+    "verification": {
+      "verdict": "SUPPORTED",
+      "verification_confidence": 0.95,
+      "verification_score": 0.775
+    },
+    "trust_components": {
+      "verification_confidence": 0.95,
+      "evidence_relevance": 0.525,
+      "evidence_sufficiency": 0.81,
+      "source_authority": 1.0,
+      "evidence_consistency": 1.0
+    },
+    "base_trust_score": 0.8353,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    },
+    "trust_score": 83.53,
+    "trust_level": "HIGH",
+    "explanation": "Trust Score is high (83.53) because the claim is directly supported by authoritative legal evidence from Section 103 with high relevance (0.53) and consistency (1.00).",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH06_SEC103_CHUNK01",
+        "BNS_2023_CH06_SEC104_CHUNK01",
+        "BNS_2023_CH06_SEC109_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_002",
+    "claim": "Section 103 of the BNS defines theft and prescribes punishment for theft.",
+    "verification": {
+      "verdict": "REFUTED",
+      "verification_confidence": 0.91,
+      "verification_score": 0.6
+    },
+    "trust_components": {
+      "verification_confidence": 0.91,
+      "evidence_relevance": 0.6185,
+      "evidence_sufficiency": 0.8092,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.5
+    },
+    "base_trust_score": 0.7945,
+    "verdict_adjustment": {
+      "type": "REFUTED",
+      "factor_or_formula": "final_trust = 100 * (1 - verification_confidence) * base_quality"
+    },
+    "trust_score": 6.69,
+    "trust_level": "VERY_LOW",
+    "explanation": "Trust Score is very low (6.69) because authoritative evidence strongly contradicts the claim, even though the verifier has high confidence (0.91) in the REFUTED verdict.",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH17_SEC328_CHUNK01",
+        "BNS_2023_CH17_SEC313_CHUNK01",
+        "BNS_2023_CH17_SEC304_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_003",
+    "claim": "Section 358 of the BNS deals with repeal and savings.",
+    "verification": {
+      "verdict": "SUPPORTED",
+      "verification_confidence": 0.95,
+      "verification_score": 0.7875
+    },
+    "trust_components": {
+      "verification_confidence": 0.95,
+      "evidence_relevance": 0.299,
+      "evidence_sufficiency": 0.7196,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.6852,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    },
+    "trust_score": 68.52,
+    "trust_level": "MODERATE",
+    "explanation": "Trust Score is moderate (68.52) because the claim is directly supported by authoritative legal evidence from Section 358 with high relevance (0.30) and consistency (0.20).",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH20_SEC358_CHUNK01",
+        "BNS_2023_CH06_SEC145_CHUNK01",
+        "BNS_2023_CH10_SEC186_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_004",
+    "claim": "Section 351 of the BNS defines criminal intimidation.",
+    "verification": {
+      "verdict": "SUPPORTED",
+      "verification_confidence": 0.95,
+      "verification_score": 0.7812
+    },
+    "trust_components": {
+      "verification_confidence": 0.95,
+      "evidence_relevance": 0.5274,
+      "evidence_sufficiency": 0.8109,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.756,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    },
+    "trust_score": 75.6,
+    "trust_level": "HIGH",
+    "explanation": "Trust Score is high (75.60) because the claim is directly supported by authoritative legal evidence from Section 351 with high relevance (0.53) and consistency (0.20).",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH19_SEC351_CHUNK01",
+        "BNS_2023_CH19_SEC352_CHUNK01",
+        "BNS_2023_CH19_SEC355_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_005",
+    "claim": "Section 1 of the BNS specifies the short title, commencement and application of the Act.",
+    "verification": {
+      "verdict": "SUPPORTED",
+      "verification_confidence": 0.9667,
+      "verification_score": 0.8371
+    },
+    "trust_components": {
+      "verification_confidence": 0.9667,
+      "evidence_relevance": 0.3738,
+      "evidence_sufficiency": 0.7495,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.7142,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    },
+    "trust_score": 71.42,
+    "trust_level": "HIGH",
+    "explanation": "Trust Score is high (71.42) because the claim is directly supported by authoritative legal evidence from Section 1 with high relevance (0.37) and consistency (0.20).",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH01_SEC1_CHUNK01",
+        "BNS_2023_CH20_SEC358_CHUNK01",
+        "BNS_2023_CH03_SEC40_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_006",
+    "claim": "Section 303 of the BNS defines snatching.",
+    "verification": {
+      "verdict": "REFUTED",
+      "verification_confidence": 0.91,
+      "verification_score": 0.6
+    },
+    "trust_components": {
+      "verification_confidence": 0.91,
+      "evidence_relevance": 0.388,
+      "evidence_sufficiency": 0.694,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.5
+    },
+    "base_trust_score": 0.7196,
+    "verdict_adjustment": {
+      "type": "REFUTED",
+      "factor_or_formula": "final_trust = 100 * (1 - verification_confidence) * base_quality"
+    },
+    "trust_score": 5.71,
+    "trust_level": "VERY_LOW",
+    "explanation": "Trust Score is very low (5.71) because authoritative evidence strongly contradicts the claim, even though the verifier has high confidence (0.91) in the REFUTED verdict.",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH17_SEC304_CHUNK01",
+        "BNS_2023_CH17_SEC303_CHUNK01",
+        "BNS_2023_CH06_SEC112_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_007",
+    "claim": "Under Section 303 of the BNS, a person convicted of theft is sentenced only to twenty years of mandatory solitary confinement.",
+    "verification": {
+      "verdict": "REFUTED",
+      "verification_confidence": 0.92,
+      "verification_score": 0.7
+    },
+    "trust_components": {
+      "verification_confidence": 0.92,
+      "evidence_relevance": 0.448,
+      "evidence_sufficiency": 0.724,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.8
+    },
+    "base_trust_score": 0.7726,
+    "verdict_adjustment": {
+      "type": "REFUTED",
+      "factor_or_formula": "final_trust = 100 * (1 - verification_confidence) * base_quality"
+    },
+    "trust_score": 5.66,
+    "trust_level": "VERY_LOW",
+    "explanation": "Trust Score is very low (5.66) because authoritative evidence strongly contradicts the claim, even though the verifier has high confidence (0.92) in the REFUTED verdict.",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH02_SEC11_CHUNK01",
+        "BNS_2023_CH02_SEC12_CHUNK01",
+        "BNS_2023_CH14_SEC261_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_008",
+    "claim": "Section 64 of the BNS specifies punishment for rape.",
+    "verification": {
+      "verdict": "SUPPORTED",
+      "verification_confidence": 0.95,
+      "verification_score": 0.7742
+    },
+    "trust_components": {
+      "verification_confidence": 0.95,
+      "evidence_relevance": 0.6744,
+      "evidence_sufficiency": 0.8698,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.8
+    },
+    "base_trust_score": 0.8616,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    },
+    "trust_score": 86.16,
+    "trust_level": "VERY_HIGH",
+    "explanation": "Trust Score is very high (86.16) because the claim is directly supported by authoritative legal evidence from Section 64 with high relevance (0.67) and consistency (0.80).",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH05_SEC64_CHUNK01",
+        "BNS_2023_CH05_SEC71_CHUNK01",
+        "BNS_2023_CH05_SEC66_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_009",
+    "claim": "Section 64 of the BNS provides that rape is punishable only by a maximum fine of one hundred rupees with no imprisonment.",
+    "verification": {
+      "verdict": "REFUTED",
+      "verification_confidence": 0.92,
+      "verification_score": 0.7
+    },
+    "trust_components": {
+      "verification_confidence": 0.92,
+      "evidence_relevance": 0.5395,
+      "evidence_sufficiency": 0.7698,
+      "source_authority": 1.0,
+      "evidence_consistency": 1.0
+    },
+    "base_trust_score": 0.8223,
+    "verdict_adjustment": {
+      "type": "REFUTED",
+      "factor_or_formula": "final_trust = 100 * (1 - verification_confidence) * base_quality"
+    },
+    "trust_score": 6.25,
+    "trust_level": "VERY_LOW",
+    "explanation": "Trust Score is very low (6.25) because authoritative evidence strongly contradicts the claim, even though the verifier has high confidence (0.92) in the REFUTED verdict.",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH02_SEC8_CHUNK01",
+        "BNS_2023_CH05_SEC64_CHUNK01",
+        "BNS_2023_CH05_SEC71_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_010",
+    "claim": "Section 303 of the BNS applies to offences committed exclusively within the maritime international waters of foreign flags.",
+    "verification": {
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "verification_confidence": 0.4818,
+      "verification_score": 0.2727
+    },
+    "trust_components": {
+      "verification_confidence": 0.4818,
+      "evidence_relevance": 0.5303,
+      "evidence_sufficiency": 0.1591,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.4951,
+    "verdict_adjustment": {
+      "type": "INSUFFICIENT_EVIDENCE",
+      "factor_or_formula": "final_trust = 100 * base_trust * 0.4"
+    },
+    "trust_score": 19.8,
+    "trust_level": "VERY_LOW",
+    "explanation": "Trust Score is very low (19.80) because available evidence does not sufficiently establish or refute the claim.",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH06_SEC113_CHUNK01",
+        "BNS_2023_CH06_SEC140_CHUNK01",
+        "BNS_2023_CH06_SEC141_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_011",
+    "claim": "Section 309 of the BNS defines robbery.",
+    "verification": {
+      "verdict": "SUPPORTED",
+      "verification_confidence": 0.9333,
+      "verification_score": 0.6982
+    },
+    "trust_components": {
+      "verification_confidence": 0.9333,
+      "evidence_relevance": 0.5199,
+      "evidence_sufficiency": 0.808,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.7478,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    },
+    "trust_score": 74.78,
+    "trust_level": "HIGH",
+    "explanation": "Trust Score is high (74.78) because the claim is directly supported by authoritative legal evidence from Section 309 with high relevance (0.52) and consistency (0.20).",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH17_SEC309_CHUNK01",
+        "BNS_2023_CH17_SEC309_CHUNK02",
+        "BNS_2023_CH17_SEC312_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  },
+  {
+    "claim_id": "CLAIM_012",
+    "claim": "Quantum computing hardware utilizes superconducting qubits and Josephson junctions.",
+    "verification": {
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "verification_confidence": 0.3222,
+      "verification_score": 0.0
+    },
+    "trust_components": {
+      "verification_confidence": 0.3222,
+      "evidence_relevance": 0.3166,
+      "evidence_sufficiency": 0.095,
+      "source_authority": 1.0,
+      "evidence_consistency": 0.2
+    },
+    "base_trust_score": 0.3762,
+    "verdict_adjustment": {
+      "type": "INSUFFICIENT_EVIDENCE",
+      "factor_or_formula": "final_trust = 100 * base_trust * 0.4"
+    },
+    "trust_score": 15.05,
+    "trust_level": "VERY_LOW",
+    "explanation": "Trust Score is very low (15.05) because available evidence does not sufficiently establish or refute the claim.",
+    "evidence_summary": {
+      "evidence_count": 5,
+      "top_chunk_ids": [
+        "BNS_2023_CH14_SEC240_CHUNK01",
+        "BNS_2023_CH04_SEC51_CHUNK01",
+        "BNS_2023_CH03_SEC21_CHUNK01"
+      ]
+    },
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    }
+  }
+]

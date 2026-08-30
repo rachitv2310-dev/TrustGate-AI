@@ -1,0 +1,74 @@
+[
+  {
+    "claim_id": "CLAIM_001",
+    "claim": "Section 103 of the BNS prescribes punishment for murder.",
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section"
+  },
+  {
+    "claim_id": "CLAIM_002",
+    "claim": "Section 103 of the BNS defines theft and prescribes punishment for theft.",
+    "expected_verdict": "REFUTED",
+    "category": "refuted_section_mismatch"
+  },
+  {
+    "claim_id": "CLAIM_003",
+    "claim": "Section 358 of the BNS deals with repeal and savings.",
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section"
+  },
+  {
+    "claim_id": "CLAIM_004",
+    "claim": "Section 351 of the BNS defines criminal intimidation.",
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section"
+  },
+  {
+    "claim_id": "CLAIM_005",
+    "claim": "Section 1 of the BNS specifies the short title, commencement and application of the Act.",
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section"
+  },
+  {
+    "claim_id": "CLAIM_006",
+    "claim": "Section 303 of the BNS defines snatching.",
+    "expected_verdict": "REFUTED",
+    "category": "refuted_section_mismatch"
+  },
+  {
+    "claim_id": "CLAIM_007",
+    "claim": "Under Section 303 of the BNS, a person convicted of theft is sentenced only to twenty years of mandatory solitary confinement.",
+    "expected_verdict": "REFUTED",
+    "category": "refuted_factual_contradiction"
+  },
+  {
+    "claim_id": "CLAIM_008",
+    "claim": "Section 64 of the BNS specifies punishment for rape.",
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section"
+  },
+  {
+    "claim_id": "CLAIM_009",
+    "claim": "Section 64 of the BNS provides that rape is punishable only by a maximum fine of one hundred rupees with no imprisonment.",
+    "expected_verdict": "REFUTED",
+    "category": "refuted_factual_contradiction"
+  },
+  {
+    "claim_id": "CLAIM_010",
+    "claim": "Section 303 of the BNS applies to offences committed exclusively within the maritime international waters of foreign flags.",
+    "expected_verdict": "INSUFFICIENT_EVIDENCE",
+    "category": "insufficient_extrapolated_legal_claim"
+  },
+  {
+    "claim_id": "CLAIM_011",
+    "claim": "Section 309 of the BNS defines robbery.",
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section"
+  },
+  {
+    "claim_id": "CLAIM_012",
+    "claim": "Quantum computing hardware utilizes superconducting qubits and Josephson junctions.",
+    "expected_verdict": "INSUFFICIENT_EVIDENCE",
+    "category": "negative_out_of_domain"
+  }
+]

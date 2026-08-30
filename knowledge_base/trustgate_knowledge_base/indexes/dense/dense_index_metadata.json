@@ -1,0 +1,13 @@
+{
+  "document_id": "BNS_2023",
+  "source_dataset": "data/processed/BNS_2023_chunks.jsonl",
+  "total_documents": 392,
+  "embedding_model": "LSA-TruncatedSVD-128d",
+  "embedding_dimension": 128,
+  "vector_count": 392,
+  "similarity_metric": "Cosine Similarity",
+  "normalization_status": "L2-normalized (unit length)",
+  "created_at": "2026-08-26T16:58:00+05:30",
+  "source_text_sha256": "f0ee026645e589f3ed7aba4cbbbad60a0a5f2b0a428716e845785acb56d32af5",
+  "raw_pdf_sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5"
+}

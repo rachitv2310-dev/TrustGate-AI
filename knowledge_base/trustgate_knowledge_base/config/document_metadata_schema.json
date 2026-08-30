@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TrustGate Document Metadata Schema",
+  "type": "object",
+  "properties": {
+    "document_id": {
+      "type": "string",
+      "description": "Unique identifier assigned to the document in the knowledge base."
+    },
+    "title": {
+      "type": "string",
+      "description": "Canonical title or heading of the legal document."
+    },
+    "source_name": {
+      "type": "string",
+      "description": "Registered name of the source publisher or agency."
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Original web address / URL from which the document was retrieved."
+    },
+    "source_domain": {
+      "type": "string",
+      "description": "Fully qualified domain name of the source (must match a trusted registry entry)."
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["PRIMARY_LEGAL_SOURCE", "OFFICIAL_JUDICIARY", "REPUTABLE_SECONDARY", "GENERAL_WEB", "UNVERIFIED"],
+      "description": "Classification of the source publisher."
+    },
+    "authority_tier": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Hierarchical authority tier assigned to the source (1 = highest)."
+    },
+    "authority_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Initial design score representing relative authority."
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Legal jurisdiction relevant to the document (e.g., India, State of Delhi)."
+    },
+    "document_type": {
+      "type": "string",
+      "enum": ["STATUTE", "ACT", "JUDGMENT", "GAZETTE_NOTIFICATION", "RULE", "REGULATION", "CIRCULAR", "OTHER"],
+      "description": "Legal classification of the document."
+    },
+    "act_name": {
+      "type": ["string", "null"],
+      "description": "Name of the parent Act if applicable; nullable for standalone judgments or notifications."
+    },
+    "section_number": {
+      "type": ["string", "null"],
+      "description": "Section or clause number if applicable; nullable."
+    },
+    "chapter": {
+      "type": ["string", "null"],
+      "description": "Chapter number or title if applicable; nullable."
+    },
+    "judgment_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Date of judicial decision (YYYY-MM-DD); nullable for non-judicial documents."
+    },
+    "publication_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Official publication or enactment date (YYYY-MM-DD); nullable if unknown."
+    },
+    "retrieval_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC timestamp when the document was downloaded/ingested."
+    },
+    "language": {
+      "type": "string",
+      "default": "en",
+      "description": "Language code of the document content (e.g., en, hi)."
+    },
+    "file_format": {
+      "type": "string",
+      "enum": ["pdf", "html", "txt", "xml", "json"],
+      "description": "Original file format of the ingested document."
+    },
+    "original_file_name": {
+      "type": "string",
+      "description": "Filename of the raw file as downloaded into data/raw/."
+    },
+    "content_hash": {
+      "type": "string",
+      "description": "Cryptographic hash (SHA-256) computed over raw file content for deduplication and audit integrity."
+    },
+    "processing_status": {
+      "type": "string",
+      "enum": ["RAW_INGESTED", "PROCESSED", "VALIDATED", "INDEXED", "FLAGGED_FOR_REVIEW", "REJECTED"],
+      "description": "Current status of document in the processing pipeline."
+    }
+  },
+  "required": [
+    "document_id",
+    "title",
+    "source_name",
+    "source_url",
+    "source_domain",
+    "source_type",
+    "authority_tier",
+    "authority_score",
+    "jurisdiction",
+    "document_type",
+    "retrieval_date",
+    "language",
+    "file_format",
+    "original_file_name",
+    "content_hash",
+    "processing_status"
+  ],
+  "additionalProperties": false
+}

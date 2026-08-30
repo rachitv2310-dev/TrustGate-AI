@@ -1,0 +1,17 @@
+{
+  "manifest_version": "1.0.0",
+  "total_documents": 1,
+  "ingested_documents": [
+    {
+      "document_id": "BNS_2023",
+      "title": "Bharatiya Nyaya Sanhita, 2023",
+      "source_url": "https://indiacode.gov.in/handle/123456789/496548",
+      "source_domain": "indiacode.nic.in",
+      "original_file_name": "Bharatiya_Nyaya_Sanhita_2023.pdf",
+      "file_size_bytes": 1115210,
+      "sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5",
+      "retrieval_timestamp": "2026-08-26T10:38:13Z",
+      "ingestion_status": "SUCCESS"
+    }
+  ]
+}

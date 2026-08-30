@@ -1,0 +1,152 @@
+[
+  {
+    "query": "Section 103",
+    "top_candidate": "BNS_2023_CH06_SEC103_CHUNK01",
+    "rerank_score": 0.75,
+    "feature_contributions": {
+      "hybrid_score": 1.0,
+      "normalized_bm25": 1.0,
+      "normalized_dense": 1.0,
+      "query_term_coverage": 0.5,
+      "exact_term_overlap": 0.5,
+      "phrase_match": 0.0,
+      "section_match": 1.0,
+      "heading_match": 0.0
+    }
+  },
+  {
+    "query": "punishment for murder",
+    "top_candidate": "BNS_2023_CH06_SEC103_CHUNK01",
+    "rerank_score": 0.95,
+    "feature_contributions": {
+      "hybrid_score": 1.0,
+      "normalized_bm25": 1.0,
+      "normalized_dense": 1.0,
+      "query_term_coverage": 1.0,
+      "exact_term_overlap": 1.0,
+      "phrase_match": 1.0,
+      "section_match": 0.0,
+      "heading_match": 1.0
+    }
+  },
+  {
+    "query": "punishment for rape",
+    "top_candidate": "BNS_2023_CH05_SEC64_CHUNK01",
+    "rerank_score": 0.9399,
+    "feature_contributions": {
+      "hybrid_score": 0.9832,
+      "normalized_bm25": 0.9664,
+      "normalized_dense": 1.0,
+      "query_term_coverage": 1.0,
+      "exact_term_overlap": 1.0,
+      "phrase_match": 1.0,
+      "section_match": 0.0,
+      "heading_match": 1.0
+    }
+  },
+  {
+    "query": "definition of child",
+    "top_candidate": "BNS_2023_CH01_SEC3_CHUNK01",
+    "rerank_score": 0.7535,
+    "feature_contributions": {
+      "hybrid_score": 0.9226,
+      "normalized_bm25": 1.0,
+      "normalized_dense": 0.8451,
+      "query_term_coverage": 1.0,
+      "exact_term_overlap": 1.0,
+      "phrase_match": 0.0,
+      "section_match": 0.0,
+      "heading_match": 0.0
+    }
+  },
+  {
+    "query": "criminal intimidation",
+    "top_candidate": "BNS_2023_CH19_SEC351_CHUNK01",
+    "rerank_score": 0.95,
+    "feature_contributions": {
+      "hybrid_score": 1.0,
+      "normalized_bm25": 1.0,
+      "normalized_dense": 1.0,
+      "query_term_coverage": 1.0,
+      "exact_term_overlap": 1.0,
+      "phrase_match": 1.0,
+      "section_match": 0.0,
+      "heading_match": 1.0
+    }
+  },
+  {
+    "query": "short title commencement and application",
+    "top_candidate": "BNS_2023_CH01_SEC1_CHUNK01",
+    "rerank_score": 0.95,
+    "feature_contributions": {
+      "hybrid_score": 1.0,
+      "normalized_bm25": 1.0,
+      "normalized_dense": 1.0,
+      "query_term_coverage": 1.0,
+      "exact_term_overlap": 1.0,
+      "phrase_match": 1.0,
+      "section_match": 0.0,
+      "heading_match": 1.0
+    }
+  },
+  {
+    "query": "repeal and savings",
+    "top_candidate": "BNS_2023_CH20_SEC358_CHUNK01",
+    "rerank_score": 0.95,
+    "feature_contributions": {
+      "hybrid_score": 1.0,
+      "normalized_bm25": 1.0,
+      "normalized_dense": 1.0,
+      "query_term_coverage": 1.0,
+      "exact_term_overlap": 1.0,
+      "phrase_match": 1.0,
+      "section_match": 0.0,
+      "heading_match": 1.0
+    }
+  },
+  {
+    "query": "theft",
+    "top_candidate": "BNS_2023_CH17_SEC303_CHUNK01",
+    "rerank_score": 0.8383,
+    "feature_contributions": {
+      "hybrid_score": 0.9805,
+      "normalized_bm25": 0.9611,
+      "normalized_dense": 1.0,
+      "query_term_coverage": 1.0,
+      "exact_term_overlap": 1.0,
+      "phrase_match": 0.0,
+      "section_match": 0.0,
+      "heading_match": 1.0
+    }
+  },
+  {
+    "query": "robbery or dacoity",
+    "top_candidate": "BNS_2023_CH17_SEC312_CHUNK01",
+    "rerank_score": 0.95,
+    "feature_contributions": {
+      "hybrid_score": 1.0,
+      "normalized_bm25": 1.0,
+      "normalized_dense": 1.0,
+      "query_term_coverage": 1.0,
+      "exact_term_overlap": 1.0,
+      "phrase_match": 1.0,
+      "section_match": 0.0,
+      "heading_match": 1.0
+    }
+  },
+  {
+    "query": "quantum computing semiconductor physics",
+    "top_candidate": "BNS_2023_CH01_SEC1_CHUNK01",
+    "rerank_score": 0.0,
+    "feature_contributions": {
+      "hybrid_score": 0.0,
+      "normalized_bm25": 0.0,
+      "normalized_dense": 0.0,
+      "query_term_coverage": 0.0,
+      "exact_term_overlap": 0.0,
+      "phrase_match": 0.0,
+      "section_match": 0.0,
+      "heading_match": 0.0
+    }
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "document_id": "BNS_2023",
+  "pipeline_architecture": "End-to-End Explainable Verification Pipeline (Hybrid Retrieval -> Legal Reranker -> Claim Verifier -> Trust Score Calculator -> Report Generator)",
+  "benchmark_size": 12,
+  "verdict_distribution": {
+    "supported": 6,
+    "refuted": 4,
+    "insufficient_evidence": 2
+  },
+  "metrics": {
+    "verdict_accuracy": 100.0,
+    "macro_f1": 1.0,
+    "average_trust_score": 43.26,
+    "evidence_traceability_rate": 100.0,
+    "determinism_rate": 100.0,
+    "average_processing_time_ms": 30.81
+  },
+  "validation_checks": {
+    "check_1_all_reports_contain_claim": true,
+    "check_2_single_verdict_per_report": true,
+    "check_3_valid_verdict_class": true,
+    "check_4_trust_score_in_bounds": true,
+    "check_5_trust_level_valid": true,
+    "check_6_confidence_in_bounds": true,
+    "check_7_chunk_ids_exist_in_dataset": true,
+    "check_8_evidence_text_originates_from_chunks": true,
+    "check_9_no_new_legal_text_generated": true,
+    "check_10_section_metadata_matches_structure": true,
+    "check_11_page_ranges_valid": true,
+    "check_12_source_authority_preserved": true,
+    "check_13_raw_pdf_hash_unchanged": true,
+    "check_14_extracted_text_hash_unchanged": true,
+    "check_15_bm25_index_unchanged": true,
+    "check_16_dense_index_unchanged": true,
+    "check_17_hybrid_output_deterministic": true,
+    "check_18_reranking_output_deterministic": true,
+    "check_19_verification_verdict_deterministic": true,
+    "check_20_trust_score_deterministic": true,
+    "check_21_report_generation_deterministic": true,
+    "check_22_repeated_execution_identical": true,
+    "check_23_negative_control_no_false_evidence": true,
+    "check_24_insufficient_cases_not_refuted": true,
+    "check_25_refuted_claims_lower_than_supported": true,
+    "check_26_evidence_provenance_complete": true,
+    "check_27_json_output_valid_serializable": true,
+    "check_28_markdown_report_generated": true,
+    "check_29_all_output_files_created": true,
+    "check_30_existing_chunk_1_13_files_unchanged": true
+  },
+  "provenance": {
+    "document_title": "Bharatiya Nyaya Sanhita, 2023",
+    "raw_pdf_sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5",
+    "source_text_sha256": "f0ee026645e589f3ed7aba4cbbbad60a0a5f2b0a428716e845785acb56d32af5"
+  },
+  "architectural_statement": "The report generator must NOT independently determine legal truth. It must only explain and aggregate outputs already produced by retrieval, reranking, verification, and trust score calculation.",
+  "status": "SUCCESS",
+  "notes": "Completed End-to-End Pipeline Integration & Explainable Verification Report Generator over BNS 2023 benchmark (12 claims). Status: SUCCESS."
+}

@@ -1,0 +1,84 @@
+{
+  "document_id": "BNS_2023",
+  "reranking_method": "Multi-Feature Explainable Legal Reranker (Deterministic Weighted Linear Model)",
+  "candidate_pool": {
+    "bm25_top_k": 20,
+    "dense_top_k": 20,
+    "maximum_unique_candidates": 40
+  },
+  "features": [
+    "hybrid_score",
+    "normalized_bm25",
+    "normalized_dense",
+    "query_term_coverage",
+    "exact_term_overlap",
+    "phrase_match",
+    "section_match",
+    "heading_match"
+  ],
+  "weights": {
+    "hybrid_score": 0.3,
+    "normalized_bm25": 0.15,
+    "normalized_dense": 0.15,
+    "query_term_coverage": 0.1,
+    "exact_term_overlap": 0.1,
+    "phrase_match": 0.1,
+    "section_match": 0.05,
+    "heading_match": 0.05
+  },
+  "evaluation_query_count": 10,
+  "positive_query_count": 9,
+  "negative_control_count": 1,
+  "metrics": {
+    "hybrid": {
+      "hit_at_1": 100.0,
+      "hit_at_3": 100.0,
+      "hit_at_5": 100.0,
+      "mrr": 1.0
+    },
+    "hybrid_reranked": {
+      "hit_at_1": 100.0,
+      "hit_at_3": 100.0,
+      "hit_at_5": 100.0,
+      "mrr": 1.0
+    }
+  },
+  "query_performance_summary": {
+    "queries_improved": 0,
+    "queries_unchanged": 9,
+    "queries_degraded": 0
+  },
+  "negative_control_validation": {
+    "query": "quantum computing semiconductor physics",
+    "candidate_count": 20,
+    "top_result_chunk_id": "BNS_2023_CH01_SEC1_CHUNK01",
+    "rerank_score": 0.0,
+    "false_evidence_introduced": false,
+    "status": "PASSED (Zero score across all features, no false evidence produced)"
+  },
+  "quality_checks": {
+    "check_1_all_candidates_from_hybrid": true,
+    "check_2_no_new_text_introduced": true,
+    "check_3_no_candidate_duplicated": true,
+    "check_4_chunk_ids_map_to_dataset": true,
+    "check_5_provenance_metadata_intact": true,
+    "check_6_no_nan_scores": true,
+    "check_7_all_rerank_scores_finite": true,
+    "check_8_tie_breaking_deterministic": true,
+    "check_9_bm25_index_unchanged": true,
+    "check_10_dense_index_unchanged": true,
+    "check_11_hybrid_results_unchanged": true,
+    "check_12_raw_pdf_hash_unchanged": true,
+    "check_13_source_text_hash_unchanged": true,
+    "check_14_chunks_file_unchanged": true,
+    "check_15_negative_control_safe": true
+  },
+  "provenance": {
+    "document_title": "Bharatiya Nyaya Sanhita, 2023",
+    "raw_pdf_sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5",
+    "source_text_sha256": "f0ee026645e589f3ed7aba4cbbbad60a0a5f2b0a428716e845785acb56d32af5"
+  },
+  "status": "SUCCESS",
+  "statement": "Multi-stage legal evidence reranking is a candidate ordering refinement layer. It does not determine legal truth and does not perform claim verification.",
+  "notes": "Implemented multi-feature explainable legal reranking over Hybrid candidate pool. Evaluated on 10 baseline queries: Hit@1 = 100.0%, Hit@3 = 100.0%, MRR = 1.0000. Status: SUCCESS."
+}

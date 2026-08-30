@@ -4,51 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrustGate-AI</title>
+    <!-- Professional Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
 <header>
-    <h1>TrustGate-AI</h1>
+    <div class="header-container">
+        <h1><a href="/">TrustGate-AI</a></h1>
+        <span class="header-tag">AI Response Verification System</span>
+    </div>
 </header>
 
 <main>
-    
-    <section>
+    <section class="hero-section">
         <h2>Building Trust in AI Responses Through Intelligent Verification</h2>
         <p>
             Verify AI-generated responses using trusted evidence,
             semantic verification and transparent trust scores.
         </p>
-        <a href="/verify">
+        <a href="/verify" class="btn-primary">
             Start Verification
         </a>
     </section>
-    <section>
 
-    <h2>Why TrustGate-AI?</h2>
+    <section class="features-section">
+        <h2>Why TrustGate-AI?</h2>
 
-    <div class="features">
+        <div class="features">
+            <div class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+                </div>
+                <h3>Claim Verification</h3>
+                <p>Extract and verify factual claims from AI-generated responses.</p>
+            </div>
 
-        <div class="card">
-            <h3>Claim Verification</h3>
-            <p>Extract and verify factual claims from AI-generated responses.</p>
+            <div class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                </div>
+                <h3>Trusted Evidence</h3>
+                <p>Retrieve supporting information from reliable knowledge sources.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h3>Trust Score</h3>
+                <p>Generate an explainable trust score with transparent reasoning.</p>
+            </div>
         </div>
-
-        <div class="card">
-            <h3>Trusted Evidence</h3>
-            <p>Retrieve supporting information from reliable knowledge sources.</p>
-        </div>
-
-        <div class="card">
-            <h3>Trust Score</h3>
-            <p>Generate an explainable trust score with transparent reasoning.</p>
-        </div>
-
-    </div>
-
-</section>
+    </section>
 </main>
-   
 
 </body>
 </html>

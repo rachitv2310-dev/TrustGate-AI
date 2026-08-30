@@ -1,0 +1,139 @@
+{
+  "report_id": "REPORT_CLAIM_001",
+  "generated_at": "2026-08-26T17:38:25.635632",
+  "pipeline_version": "TrustGate-AI v1.0.0",
+  "processing_time_ms": 29.35,
+  "claim_id": "CLAIM_001",
+  "claim": "Section 103 of the BNS prescribes punishment for murder.",
+  "expected_verdict": "SUPPORTED",
+  "retrieval_summary": {
+    "retrieval_method": "Hybrid BM25 + LSA Dense (Score Fusion)",
+    "bm25_candidates": 20,
+    "dense_candidates": 20,
+    "merged_candidates": 20,
+    "hybrid_alpha": 0.5
+  },
+  "reranking_summary": {
+    "reranking_method": "Multi-Feature Deterministic Legal Reranker",
+    "candidates_reranked": 20,
+    "final_evidence_count": 5
+  },
+  "verification": {
+    "verdict": "SUPPORTED",
+    "confidence": 0.95,
+    "verification_score": 0.775,
+    "reason": "Retrieved authoritative evidence directly supports the section number, heading, and legal text of the claim."
+  },
+  "trust_score": {
+    "score": 83.53,
+    "level": "HIGH",
+    "base_trust_score": 0.8353,
+    "verdict_adjustment": {
+      "type": "SUPPORTED",
+      "factor_or_formula": "final_trust = 100 * base_trust"
+    },
+    "components": {
+      "verification_confidence": 0.95,
+      "evidence_relevance": 0.525,
+      "evidence_sufficiency": 0.81,
+      "source_authority": 1.0,
+      "evidence_consistency": 1.0
+    }
+  },
+  "score_explanation": "Trust Score is high (83.53) because the claim is directly supported by authoritative legal evidence from Section 103 with high relevance (0.53) and consistency (1.00).",
+  "evidence": [
+    {
+      "rank": 1,
+      "chunk_id": "BNS_2023_CH06_SEC103_CHUNK01",
+      "section_number": "103",
+      "section_heading": "Punishment  for  murder",
+      "chapter_number": "VI",
+      "page_start": 47,
+      "page_end": 47,
+      "text_start_offset": 145117,
+      "text_end_offset": 145607,
+      "rerank_score": 0.8,
+      "hybrid_rank": 1,
+      "relationship": "SUPPORTS",
+      "evidence_excerpt": "\n103\n.\nPunishment  for  murder\n.\n\u2014\n(\n1\n\\  Whoever  commits  murder  shall  be  punished  with  death  or\nimprisonment for life, and shall also be liable to fine.\n(\n2\n\\ When a group of five or more persons acting in concert commits murder on the groun",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    },
+    {
+      "rank": 2,
+      "chunk_id": "BNS_2023_CH06_SEC104_CHUNK01",
+      "section_number": "104",
+      "section_heading": "Punishment for murder by life",
+      "chapter_number": "VI",
+      "page_start": 47,
+      "page_end": 47,
+      "text_start_offset": 145607,
+      "text_end_offset": 145880,
+      "rerank_score": 0.5699,
+      "hybrid_rank": 2,
+      "relationship": "SUPPORTS",
+      "evidence_excerpt": "\n104\n.\nPunishment for murder by life\n-\nconvict\n.\n\u2014\nWhoever, being under sentence of imprisonment for\nlife, commits murder, shall be punished with death or with imprisonment for life, which shall mean the\nr\u0000H\u0000P\u0000D\u0000Ln\u0000G\u0000H\u0000U\u0000\u0003\u0000R\u0000I t\u0000K\u0000Dt\u0000\u0003\u0000S\u0000Hr\u0000V\u0000R\u0000Q\u2019\u0000V\u0000",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    },
+    {
+      "rank": 3,
+      "chunk_id": "BNS_2023_CH06_SEC109_CHUNK01",
+      "section_number": "109",
+      "section_heading": "Attempt to murder",
+      "chapter_number": "VI",
+      "page_start": 47,
+      "page_end": 48,
+      "text_start_offset": 148535,
+      "text_end_offset": 150488,
+      "rerank_score": 0.5148,
+      "hybrid_rank": 3,
+      "relationship": "SUPPORTS",
+      "evidence_excerpt": "\n109\n.\nAttempt to murder\n.\n\u2014\n(\n1\n\\ Whoever does any act with such intention or knowledge, and under\nsuch circumstances that, if he by that act caused death, he would be guilty of murder, shall be punished\nwith imprisonment of either description for a",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    },
+    {
+      "rank": 4,
+      "chunk_id": "BNS_2023_CH06_SEC105_CHUNK01",
+      "section_number": "105",
+      "section_heading": "Punishment for culpable homicide not amounting to murder",
+      "chapter_number": "VI",
+      "page_start": 47,
+      "page_end": 47,
+      "text_start_offset": 145880,
+      "text_end_offset": 146646,
+      "rerank_score": 0.3858,
+      "hybrid_rank": 4,
+      "relationship": "SUPPORTS",
+      "evidence_excerpt": "\n105\n.\nPunishment for culpable homicide not amounting to murder\n.\n\u2014\nWhoever commits culpable\nhomicide not amounting to murder, shall be punished with imprisonment for life, or imprisonment of\neither description for a term which shall not be less than",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    },
+    {
+      "rank": 5,
+      "chunk_id": "BNS_2023_CH04_SEC49_CHUNK01",
+      "section_number": "49",
+      "section_heading": "Punishment of abetment if act abetted is committed in consequence and where no express",
+      "chapter_number": "IV",
+      "page_start": 32,
+      "page_end": 32,
+      "text_start_offset": 86780,
+      "text_end_offset": 88066,
+      "rerank_score": 0.3545,
+      "hybrid_rank": 6,
+      "relationship": "SUPPORTS",
+      "evidence_excerpt": "\n49\n.\nPunishment of abetment if act abetted is committed in consequence and where no express\nprovision  is  made  for  its  punishment\n.\n\u2014\nWhoever  abets  any  offence  shall,  if  the  act  abetted  is\ncommitted in consequence  of the  abetment,  an",
+      "excerpt_truncated": true,
+      "source_authority": 1.0
+    }
+  ],
+  "provenance": {
+    "document_id": "BNS_2023",
+    "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+    "source": "India Code",
+    "source_file": "data/raw/Bharatiya_Nyaya_Sanhita_2023.pdf",
+    "raw_pdf_sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5",
+    "source_text_sha256": "f0ee026645e589f3ed7aba4cbbbad60a0a5f2b0a428716e845785acb56d32af5"
+  }
+}

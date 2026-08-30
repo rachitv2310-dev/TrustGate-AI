@@ -1,0 +1,878 @@
+[
+  {
+    "claim_id": "CLAIM_001",
+    "claim": "Section 103 of the BNS prescribes punishment for murder.",
+    "verdict": "SUPPORTED",
+    "confidence": 0.95,
+    "verification_score": 0.775,
+    "reason": "Retrieved authoritative evidence directly supports the section number, heading, and legal text of the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH06_SEC103_CHUNK01",
+        "section_number": "103",
+        "chapter_number": "VI",
+        "page_start": 47,
+        "page_end": 47,
+        "text_start_offset": 145117,
+        "text_end_offset": 145607,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.8
+      },
+      {
+        "chunk_id": "BNS_2023_CH06_SEC104_CHUNK01",
+        "section_number": "104",
+        "chapter_number": "VI",
+        "page_start": 47,
+        "page_end": 47,
+        "text_start_offset": 145607,
+        "text_end_offset": 145880,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.5699
+      },
+      {
+        "chunk_id": "BNS_2023_CH06_SEC109_CHUNK01",
+        "section_number": "109",
+        "chapter_number": "VI",
+        "page_start": 47,
+        "page_end": 48,
+        "text_start_offset": 148535,
+        "text_end_offset": 150488,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.5148
+      },
+      {
+        "chunk_id": "BNS_2023_CH06_SEC105_CHUNK01",
+        "section_number": "105",
+        "chapter_number": "VI",
+        "page_start": 47,
+        "page_end": 47,
+        "text_start_offset": 145880,
+        "text_end_offset": 146646,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.3858
+      },
+      {
+        "chunk_id": "BNS_2023_CH04_SEC49_CHUNK01",
+        "section_number": "49",
+        "chapter_number": "IV",
+        "page_start": 32,
+        "page_end": 32,
+        "text_start_offset": 86780,
+        "text_end_offset": 88066,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.3545
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_002",
+    "claim": "Section 103 of the BNS defines theft and prescribes punishment for theft.",
+    "verdict": "REFUTED",
+    "confidence": 0.91,
+    "verification_score": 0.6,
+    "reason": "Retrieved authoritative evidence directly contradicts the legal or factual proposition in the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH17_SEC328_CHUNK01",
+        "section_number": "328",
+        "chapter_number": "XVII",
+        "page_start": 99,
+        "page_end": 99,
+        "text_start_offset": 367158,
+        "text_end_offset": 367680,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.6556
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC313_CHUNK01",
+        "section_number": "313",
+        "chapter_number": "XVII",
+        "page_start": 92,
+        "page_end": 92,
+        "text_start_offset": 339097,
+        "text_end_offset": 339447,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.6493
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC304_CHUNK01",
+        "section_number": "304",
+        "chapter_number": "XVII",
+        "page_start": 89,
+        "page_end": 89,
+        "text_start_offset": 327177,
+        "text_end_offset": 327568,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.5991
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC303_CHUNK01",
+        "section_number": "303",
+        "chapter_number": "XVII",
+        "page_start": 88,
+        "page_end": 88,
+        "text_start_offset": 319513,
+        "text_end_offset": 320514,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.5984
+      },
+      {
+        "chunk_id": "BNS_2023_CH06_SEC103_CHUNK01",
+        "section_number": "103",
+        "chapter_number": "VI",
+        "page_start": 47,
+        "page_end": 47,
+        "text_start_offset": 145117,
+        "text_end_offset": 145607,
+        "relationship": "REFUTES",
+        "evidence_score": 0.59
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "REFUTED",
+    "category": "refuted_section_mismatch",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_003",
+    "claim": "Section 358 of the BNS deals with repeal and savings.",
+    "verdict": "SUPPORTED",
+    "confidence": 0.95,
+    "verification_score": 0.7875,
+    "reason": "Retrieved authoritative evidence directly supports the section number, heading, and legal text of the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH20_SEC358_CHUNK01",
+        "section_number": "358",
+        "chapter_number": "XX",
+        "page_start": 110,
+        "page_end": 111,
+        "text_start_offset": 416861,
+        "text_end_offset": 418196,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.825
+      },
+      {
+        "chunk_id": "BNS_2023_CH06_SEC145_CHUNK01",
+        "section_number": "145",
+        "chapter_number": "VI",
+        "page_start": 59,
+        "page_end": 59,
+        "text_start_offset": 197655,
+        "text_end_offset": 197954,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.1785
+      },
+      {
+        "chunk_id": "BNS_2023_CH10_SEC186_CHUNK01",
+        "section_number": "186",
+        "chapter_number": "X",
+        "page_start": 65,
+        "page_end": 65,
+        "text_start_offset": 222016,
+        "text_end_offset": 223405,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.1747
+      },
+      {
+        "chunk_id": "BNS_2023_CH19_SEC357_CHUNK01",
+        "section_number": "357",
+        "chapter_number": "XIX",
+        "page_start": 110,
+        "page_end": 110,
+        "text_start_offset": 416255,
+        "text_end_offset": 416861,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.1741
+      },
+      {
+        "chunk_id": "BNS_2023_CH01_SEC2_CHUNK03",
+        "section_number": "2",
+        "chapter_number": "I",
+        "page_start": 17,
+        "page_end": 19,
+        "text_start_offset": 30559,
+        "text_end_offset": 37633,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.1426
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_004",
+    "claim": "Section 351 of the BNS defines criminal intimidation.",
+    "verdict": "SUPPORTED",
+    "confidence": 0.95,
+    "verification_score": 0.7812,
+    "reason": "Retrieved authoritative evidence directly supports the section number, heading, and legal text of the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH19_SEC351_CHUNK01",
+        "section_number": "351",
+        "chapter_number": "XIX",
+        "page_start": 106,
+        "page_end": 107,
+        "text_start_offset": 399882,
+        "text_end_offset": 401801,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.8125
+      },
+      {
+        "chunk_id": "BNS_2023_CH19_SEC352_CHUNK01",
+        "section_number": "352",
+        "chapter_number": "XIX",
+        "page_start": 107,
+        "page_end": 107,
+        "text_start_offset": 401801,
+        "text_end_offset": 402220,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.5077
+      },
+      {
+        "chunk_id": "BNS_2023_CH19_SEC355_CHUNK01",
+        "section_number": "355",
+        "chapter_number": "XIX",
+        "page_start": 108,
+        "page_end": 108,
+        "text_start_offset": 405818,
+        "text_end_offset": 406275,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.4758
+      },
+      {
+        "chunk_id": "BNS_2023_CH19_SEC357_CHUNK01",
+        "section_number": "357",
+        "chapter_number": "XIX",
+        "page_start": 110,
+        "page_end": 110,
+        "text_start_offset": 416255,
+        "text_end_offset": 416861,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.4304
+      },
+      {
+        "chunk_id": "BNS_2023_CH19_SEC356_CHUNK05",
+        "section_number": "356",
+        "chapter_number": "XIX",
+        "page_start": 110,
+        "page_end": 110,
+        "text_start_offset": 415217,
+        "text_end_offset": 416255,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.4104
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_005",
+    "claim": "Section 1 of the BNS specifies the short title, commencement and application of the Act.",
+    "verdict": "SUPPORTED",
+    "confidence": 0.9667,
+    "verification_score": 0.8371,
+    "reason": "Retrieved authoritative evidence directly supports the section number, heading, and legal text of the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH01_SEC1_CHUNK01",
+        "section_number": "1",
+        "chapter_number": "I",
+        "page_start": 16,
+        "page_end": 16,
+        "text_start_offset": 25359,
+        "text_end_offset": 27130,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.8408
+      },
+      {
+        "chunk_id": "BNS_2023_CH20_SEC358_CHUNK01",
+        "section_number": "358",
+        "chapter_number": "XX",
+        "page_start": 110,
+        "page_end": 111,
+        "text_start_offset": 416861,
+        "text_end_offset": 418196,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.2693
+      },
+      {
+        "chunk_id": "BNS_2023_CH03_SEC40_CHUNK01",
+        "section_number": "40",
+        "chapter_number": "III",
+        "page_start": 29,
+        "page_end": 29,
+        "text_start_offset": 76439,
+        "text_end_offset": 76822,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.2684
+      },
+      {
+        "chunk_id": "BNS_2023_CH03_SEC43_CHUNK01",
+        "section_number": "43",
+        "chapter_number": "III",
+        "page_start": 30,
+        "page_end": 30,
+        "text_start_offset": 78308,
+        "text_end_offset": 79269,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.2457
+      },
+      {
+        "chunk_id": "BNS_2023_CH03_SEC32_CHUNK01",
+        "section_number": "32",
+        "chapter_number": "III",
+        "page_start": 28,
+        "page_end": 28,
+        "text_start_offset": 70086,
+        "text_end_offset": 71253,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.2449
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_006",
+    "claim": "Section 303 of the BNS defines snatching.",
+    "verdict": "REFUTED",
+    "confidence": 0.91,
+    "verification_score": 0.6,
+    "reason": "Retrieved authoritative evidence directly contradicts the legal or factual proposition in the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH17_SEC304_CHUNK01",
+        "section_number": "304",
+        "chapter_number": "XVII",
+        "page_start": 89,
+        "page_end": 89,
+        "text_start_offset": 327177,
+        "text_end_offset": 327568,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.6929
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC303_CHUNK01",
+        "section_number": "303",
+        "chapter_number": "XVII",
+        "page_start": 88,
+        "page_end": 88,
+        "text_start_offset": 319513,
+        "text_end_offset": 320514,
+        "relationship": "REFUTES",
+        "evidence_score": 0.429
+      },
+      {
+        "chunk_id": "BNS_2023_CH06_SEC112_CHUNK01",
+        "section_number": "112",
+        "chapter_number": "VI",
+        "page_start": 49,
+        "page_end": 49,
+        "text_start_offset": 155661,
+        "text_end_offset": 156495,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.3438
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC303_CHUNK02",
+        "section_number": "303",
+        "chapter_number": "XVII",
+        "page_start": 88,
+        "page_end": 89,
+        "text_start_offset": 320514,
+        "text_end_offset": 327177,
+        "relationship": "REFUTES",
+        "evidence_score": 0.2476
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC306_CHUNK01",
+        "section_number": "306",
+        "chapter_number": "XVII",
+        "page_start": 89,
+        "page_end": 90,
+        "text_start_offset": 328242,
+        "text_end_offset": 328653,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.2269
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "REFUTED",
+    "category": "refuted_section_mismatch",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_007",
+    "claim": "Under Section 303 of the BNS, a person convicted of theft is sentenced only to twenty years of mandatory solitary confinement.",
+    "verdict": "REFUTED",
+    "confidence": 0.92,
+    "verification_score": 0.7,
+    "reason": "Retrieved authoritative evidence directly contradicts the legal or factual proposition in the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH02_SEC11_CHUNK01",
+        "section_number": "11",
+        "chapter_number": "II",
+        "page_start": 23,
+        "page_end": 24,
+        "text_start_offset": 53774,
+        "text_end_offset": 54557,
+        "relationship": "REFUTES",
+        "evidence_score": 0.7035
+      },
+      {
+        "chunk_id": "BNS_2023_CH02_SEC12_CHUNK01",
+        "section_number": "12",
+        "chapter_number": "II",
+        "page_start": 24,
+        "page_end": 24,
+        "text_start_offset": 54557,
+        "text_end_offset": 55102,
+        "relationship": "REFUTES",
+        "evidence_score": 0.5713
+      },
+      {
+        "chunk_id": "BNS_2023_CH14_SEC261_CHUNK01",
+        "section_number": "261",
+        "chapter_number": "XIV",
+        "page_start": 82,
+        "page_end": 82,
+        "text_start_offset": 293950,
+        "text_end_offset": 294394,
+        "relationship": "REFUTES",
+        "evidence_score": 0.327
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC303_CHUNK01",
+        "section_number": "303",
+        "chapter_number": "XVII",
+        "page_start": 88,
+        "page_end": 88,
+        "text_start_offset": 319513,
+        "text_end_offset": 320514,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.3229
+      },
+      {
+        "chunk_id": "BNS_2023_CH14_SEC232_CHUNK01",
+        "section_number": "232",
+        "chapter_number": "XIV",
+        "page_start": 76,
+        "page_end": 76,
+        "text_start_offset": 268688,
+        "text_end_offset": 269475,
+        "relationship": "REFUTES",
+        "evidence_score": 0.3155
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "REFUTED",
+    "category": "refuted_factual_contradiction",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_008",
+    "claim": "Section 64 of the BNS specifies punishment for rape.",
+    "verdict": "SUPPORTED",
+    "confidence": 0.95,
+    "verification_score": 0.7742,
+    "reason": "Retrieved authoritative evidence directly supports the section number, heading, and legal text of the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH05_SEC64_CHUNK01",
+        "section_number": "64",
+        "chapter_number": "V",
+        "page_start": 37,
+        "page_end": 37,
+        "text_start_offset": 104603,
+        "text_end_offset": 107127,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.7983
+      },
+      {
+        "chunk_id": "BNS_2023_CH05_SEC71_CHUNK01",
+        "section_number": "71",
+        "chapter_number": "V",
+        "page_start": 39,
+        "page_end": 39,
+        "text_start_offset": 114453,
+        "text_end_offset": 114910,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.7059
+      },
+      {
+        "chunk_id": "BNS_2023_CH05_SEC66_CHUNK01",
+        "section_number": "66",
+        "chapter_number": "V",
+        "page_start": 38,
+        "page_end": 38,
+        "text_start_offset": 109455,
+        "text_end_offset": 110111,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.6575
+      },
+      {
+        "chunk_id": "BNS_2023_CH05_SEC64_CHUNK02",
+        "section_number": "64",
+        "chapter_number": "V",
+        "page_start": 37,
+        "page_end": 38,
+        "text_start_offset": 107127,
+        "text_end_offset": 108228,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.6455
+      },
+      {
+        "chunk_id": "BNS_2023_CH05_SEC65_CHUNK01",
+        "section_number": "65",
+        "chapter_number": "V",
+        "page_start": 38,
+        "page_end": 38,
+        "text_start_offset": 108228,
+        "text_end_offset": 109455,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.5649
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_009",
+    "claim": "Section 64 of the BNS provides that rape is punishable only by a maximum fine of one hundred rupees with no imprisonment.",
+    "verdict": "REFUTED",
+    "confidence": 0.92,
+    "verification_score": 0.7,
+    "reason": "Retrieved authoritative evidence directly contradicts the legal or factual proposition in the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH02_SEC8_CHUNK01",
+        "section_number": "8",
+        "chapter_number": "II",
+        "page_start": 22,
+        "page_end": 23,
+        "text_start_offset": 48066,
+        "text_end_offset": 49876,
+        "relationship": "REFUTES",
+        "evidence_score": 0.6026
+      },
+      {
+        "chunk_id": "BNS_2023_CH05_SEC64_CHUNK01",
+        "section_number": "64",
+        "chapter_number": "V",
+        "page_start": 37,
+        "page_end": 37,
+        "text_start_offset": 104603,
+        "text_end_offset": 107127,
+        "relationship": "REFUTES",
+        "evidence_score": 0.5939
+      },
+      {
+        "chunk_id": "BNS_2023_CH05_SEC71_CHUNK01",
+        "section_number": "71",
+        "chapter_number": "V",
+        "page_start": 39,
+        "page_end": 39,
+        "text_start_offset": 114453,
+        "text_end_offset": 114910,
+        "relationship": "REFUTES",
+        "evidence_score": 0.5795
+      },
+      {
+        "chunk_id": "BNS_2023_CH05_SEC66_CHUNK01",
+        "section_number": "66",
+        "chapter_number": "V",
+        "page_start": 38,
+        "page_end": 38,
+        "text_start_offset": 109455,
+        "text_end_offset": 110111,
+        "relationship": "REFUTES",
+        "evidence_score": 0.4711
+      },
+      {
+        "chunk_id": "BNS_2023_CH05_SEC72_CHUNK01",
+        "section_number": "72",
+        "chapter_number": "V",
+        "page_start": 39,
+        "page_end": 40,
+        "text_start_offset": 114910,
+        "text_end_offset": 116574,
+        "relationship": "REFUTES",
+        "evidence_score": 0.4504
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "REFUTED",
+    "category": "refuted_factual_contradiction",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_010",
+    "claim": "Section 303 of the BNS applies to offences committed exclusively within the maritime international waters of foreign flags.",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "confidence": 0.4818,
+    "verification_score": 0.2727,
+    "reason": "Retrieved evidence is partially related but insufficient to conclusively support or refute the specific claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH06_SEC113_CHUNK01",
+        "section_number": "113",
+        "chapter_number": "VI",
+        "page_start": 49,
+        "page_end": 50,
+        "text_start_offset": 156495,
+        "text_end_offset": 158410,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.6819
+      },
+      {
+        "chunk_id": "BNS_2023_CH06_SEC140_CHUNK01",
+        "section_number": "140",
+        "chapter_number": "VI",
+        "page_start": 58,
+        "page_end": 58,
+        "text_start_offset": 191369,
+        "text_end_offset": 193347,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.5297
+      },
+      {
+        "chunk_id": "BNS_2023_CH06_SEC141_CHUNK01",
+        "section_number": "141",
+        "chapter_number": "VI",
+        "page_start": 58,
+        "page_end": 58,
+        "text_start_offset": 193347,
+        "text_end_offset": 193830,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.5124
+      },
+      {
+        "chunk_id": "BNS_2023_CH07_SEC154_CHUNK01",
+        "section_number": "154",
+        "chapter_number": "VII",
+        "page_start": 60,
+        "page_end": 61,
+        "text_start_offset": 202469,
+        "text_end_offset": 203035,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.4987
+      },
+      {
+        "chunk_id": "BNS_2023_CH09_SEC172_CHUNK01",
+        "section_number": "172",
+        "chapter_number": "IX",
+        "page_start": 63,
+        "page_end": 63,
+        "text_start_offset": 212289,
+        "text_end_offset": 212961,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.4288
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "INSUFFICIENT_EVIDENCE",
+    "category": "insufficient_extrapolated_legal_claim",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_011",
+    "claim": "Section 309 of the BNS defines robbery.",
+    "verdict": "SUPPORTED",
+    "confidence": 0.9333,
+    "verification_score": 0.6982,
+    "reason": "Retrieved authoritative evidence directly supports the section number, heading, and legal text of the claim.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH17_SEC309_CHUNK01",
+        "section_number": "309",
+        "chapter_number": "XVII",
+        "page_start": 91,
+        "page_end": 91,
+        "text_start_offset": 333552,
+        "text_end_offset": 334442,
+        "relationship": "SUPPORTS",
+        "evidence_score": 0.7298
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC309_CHUNK02",
+        "section_number": "309",
+        "chapter_number": "XVII",
+        "page_start": 91,
+        "page_end": 91,
+        "text_start_offset": 334442,
+        "text_end_offset": 336820,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.6544
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC312_CHUNK01",
+        "section_number": "312",
+        "chapter_number": "XVII",
+        "page_start": 92,
+        "page_end": 92,
+        "text_start_offset": 338804,
+        "text_end_offset": 339097,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.4179
+      },
+      {
+        "chunk_id": "BNS_2023_CH14_SEC254_CHUNK01",
+        "section_number": "254",
+        "chapter_number": "XIV",
+        "page_start": 80,
+        "page_end": 80,
+        "text_start_offset": 287535,
+        "text_end_offset": 288313,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.4134
+      },
+      {
+        "chunk_id": "BNS_2023_CH17_SEC311_CHUNK01",
+        "section_number": "311",
+        "chapter_number": "XVII",
+        "page_start": 92,
+        "page_end": 92,
+        "text_start_offset": 338418,
+        "text_end_offset": 338804,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.3841
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "SUPPORTED",
+    "category": "supported_exact_section",
+    "status": "PASSED"
+  },
+  {
+    "claim_id": "CLAIM_012",
+    "claim": "Quantum computing hardware utilizes superconducting qubits and Josephson junctions.",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "confidence": 0.3222,
+    "verification_score": 0.0,
+    "reason": "Retrieved evidence has negligible relevance/coverage for the claim. Out-of-domain or unsupported proposition.",
+    "evidence": [
+      {
+        "chunk_id": "BNS_2023_CH14_SEC240_CHUNK01",
+        "section_number": "240",
+        "chapter_number": "XIV",
+        "page_start": 77,
+        "page_end": 77,
+        "text_start_offset": 273265,
+        "text_end_offset": 274164,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.3222
+      },
+      {
+        "chunk_id": "BNS_2023_CH04_SEC51_CHUNK01",
+        "section_number": "51",
+        "chapter_number": "IV",
+        "page_start": 32,
+        "page_end": 33,
+        "text_start_offset": 88510,
+        "text_end_offset": 90287,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.3171
+      },
+      {
+        "chunk_id": "BNS_2023_CH03_SEC21_CHUNK01",
+        "section_number": "21",
+        "chapter_number": "III",
+        "page_start": 25,
+        "page_end": 25,
+        "text_start_offset": 60230,
+        "text_end_offset": 60556,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.3151
+      },
+      {
+        "chunk_id": "BNS_2023_CH01_SEC1_CHUNK01",
+        "section_number": "1",
+        "chapter_number": "I",
+        "page_start": 16,
+        "page_end": 16,
+        "text_start_offset": 25359,
+        "text_end_offset": 27130,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.3148
+      },
+      {
+        "chunk_id": "BNS_2023_CH03_SEC18_CHUNK01",
+        "section_number": "18",
+        "chapter_number": "III",
+        "page_start": 25,
+        "page_end": 25,
+        "text_start_offset": 57727,
+        "text_end_offset": 58179,
+        "relationship": "INSUFFICIENT",
+        "evidence_score": 0.3138
+      }
+    ],
+    "provenance": {
+      "document_id": "BNS_2023",
+      "document_title": "The Bharatiya Nyaya Sanhita, 2023",
+      "source": "India Code"
+    },
+    "expected_verdict": "INSUFFICIENT_EVIDENCE",
+    "category": "negative_out_of_domain",
+    "status": "PASSED"
+  }
+]

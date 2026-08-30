@@ -5,6 +5,14 @@ This module contains the core business logic
 for TrustGate-AI verification.
 """
 
+from backend.services.claim_extraction_service import (
+    extract_claims,
+    split_compound_claim,
+    clean_claim
+)
+
+from backend.services.claim_classification_service import classify_claim
+
 
 def verify_response(question, response):
     """
@@ -33,8 +41,27 @@ def verify_response(question, response):
             "message": "AI response cannot be empty."
         }
 
+    claims = extract_claims(response)
+
+    final_claims = []
+
+    for claim in claims:
+        split_claims = split_compound_claim(claim)
+
+        for split_claim in split_claims:
+            cleaned_claim = clean_claim(split_claim)
+
+            if cleaned_claim is not None:
+                claim_type = classify_claim(cleaned_claim)
+
+                final_claims.append({
+                    "text": cleaned_claim,
+                    "type": claim_type
+                })
+
     return {
         "success": True,
         "question": question,
-        "response": response
+        "response": response,
+        "claims": final_claims
     }

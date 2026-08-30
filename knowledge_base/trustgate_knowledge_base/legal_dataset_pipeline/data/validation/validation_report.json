@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-08-27T11:52:03.226145",
+  "file_validated": "bns_2023_pilot_kb.json",
+  "total_records": 5,
+  "valid_records": 5,
+  "warning_records": 0,
+  "failed_records": 0,
+  "overall_status": "PASSED",
+  "issues": []
+}
