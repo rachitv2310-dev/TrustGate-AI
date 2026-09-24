@@ -1,10 +1,10 @@
-from app.retrieval.chunker import DocumentChunker
-from app.retrieval.embeddings import EmbeddingService
-from app.retrieval.lexical_retriever import LexicalRetriever
-from app.retrieval.semantic_retriever import SemanticRetriever
-from app.retrieval.vector_store import VectorStoreInterface
-from app.retrieval.hybrid_retriever import HybridRetriever
-from app.retrieval.reranker import EvidenceReranker
+from .chunker import DocumentChunker
+from .embeddings import EmbeddingService
+from .lexical_retriever import LexicalRetriever
+from .semantic_retriever import SemanticRetriever
+from .vector_store import VectorStoreInterface
+from .hybrid_retriever import HybridRetriever
+from .reranker import EvidenceReranker
 
 __all__ = [
     "DocumentChunker",

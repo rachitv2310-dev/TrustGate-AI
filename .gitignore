@@ -59,3 +59,10 @@ knowledge_base/processed/*
 
 knowledge_base/metadata/*
 !knowledge_base/metadata/.gitkeep
+
+# Generated evaluation results
+backend/tests/end_to_end_15_results.json
+
+# Temporary backup files and directories
+*.bak_*
+bak_*/

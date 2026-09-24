@@ -1,0 +1,17 @@
+{
+  "bns_records_count": 85,
+  "sc_records_count": 35,
+  "total_bns_sections_in_stage1": 39,
+  "referenced_bns_sections_count": 39,
+  "bns_section_coverage_percentage": 100.0,
+  "unreferenced_bns_sections": [],
+  "total_sc_judgments_in_stage2": 25,
+  "referenced_sc_judgments_count": 21,
+  "sc_judgment_coverage_percentage": 84.0,
+  "unreferenced_sc_judgments": [
+    "SC_JUDGMENT_019",
+    "SC_JUDGMENT_021",
+    "SC_JUDGMENT_022",
+    "SC_JUDGMENT_025"
+  ]
+}

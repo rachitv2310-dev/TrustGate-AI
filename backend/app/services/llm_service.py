@@ -3,7 +3,10 @@ from typing import Dict, Any, Optional
 
 import requests
 
-from backend.app.config import settings
+try:
+    from backend.app.config import settings
+except ImportError:
+    from app.config import settings
 
 
 logger = logging.getLogger(__name__)
@@ -11,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 class OllamaService:
     """
-    Service wrapper for interacting with local Ollama LLM instance.
+    Service wrapper for interacting with a local Ollama LLM instance.
     """
 
     def __init__(self, base_url: Optional[str] = None):
@@ -20,7 +23,10 @@ class OllamaService:
     def generate(
         self,
         prompt: str,
-        model: Optional[str] = None
+        model: Optional[str] = None,
+        options: Optional[Dict[str, Any]] = None,
+        keep_alive: Optional[str] = "30m",
+        timeout: int = 180,
     ) -> Dict[str, Any]:
 
         target_model = model or settings.CLAIM_EXTRACTION_MODEL
@@ -30,8 +36,12 @@ class OllamaService:
         payload = {
             "model": target_model,
             "prompt": prompt,
-            "stream": False
+            "stream": False,
+            "keep_alive": keep_alive or "30m"
         }
+
+        if options:
+            payload["options"] = options
 
         logger.info(
             "Sending request to Ollama using model: %s",
@@ -42,7 +52,7 @@ class OllamaService:
             response = requests.post(
                 url,
                 json=payload,
-                timeout=120
+                timeout=timeout
             )
 
             response.raise_for_status()
@@ -55,7 +65,11 @@ class OllamaService:
             }
 
         except requests.RequestException as exc:
-            logger.error("Ollama request failed: %s", exc)
+            logger.error(
+                "Ollama request failed: %s",
+                exc
+            )
+
             raise RuntimeError(
                 f"Failed to communicate with Ollama: {exc}"
             ) from exc

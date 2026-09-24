@@ -2,7 +2,13 @@ import json
 import logging
 from pathlib import Path
 from typing import List, Dict, Any, Optional
-from app.config import settings
+
+try:
+    from backend.app.config import settings
+    from backend.app.services.knowledge_base import KnowledgeBaseLoaderService
+except ImportError:
+    from app.config import settings
+    from app.services.knowledge_base import KnowledgeBaseLoaderService
 
 logger = logging.getLogger(__name__)
 
@@ -10,23 +16,32 @@ logger = logging.getLogger(__name__)
 class VectorStoreInterface:
     """
     Lightweight In-Memory Vector Store & Document Chunk Repository.
-    Loads legal corpus chunks from BNS_2023_chunks.jsonl and provides 
-    fast metadata lookup and retrieval access.
+    Loads legal corpus chunks from JSONL or directly via KnowledgeBaseLoaderService.
+    Provides fast metadata lookup and retrieval access for the unified legal corpus.
     """
 
-    def __init__(self, chunks_path: Optional[Path] = None):
+    def __init__(self, chunks_path: Optional[Path] = None, use_kb_service: bool = False):
         self.chunks_path = chunks_path or settings.KB_CHUNKS_PATH
+        self.use_kb_service = use_kb_service
         self.chunks: List[Dict[str, Any]] = []
         self.chunk_map: Dict[str, Dict[str, Any]] = {}
 
         self._load_chunks()
 
     def _load_chunks(self) -> None:
-        """Load legal passage chunks from JSONL file into memory."""
-        if not Path(self.chunks_path).exists():
-            raise FileNotFoundError(
-                f"Legal chunks dataset file not found at: {self.chunks_path}"
-            )
+        """Load legal passage chunks from file or KnowledgeBaseLoaderService into memory."""
+        if self.use_kb_service or not Path(self.chunks_path).exists():
+            try:
+                kb_loader = KnowledgeBaseLoaderService()
+                legal_chunks = kb_loader.chunk_legal_corpus()
+                self.chunks = [c.to_dict() for c in legal_chunks]
+                self.chunk_map = {c["chunk_id"]: c for c in self.chunks}
+                logger.info(f"Loaded {len(self.chunks)} unified legal chunks via KnowledgeBaseLoaderService.")
+                return
+            except Exception as e:
+                logger.error(f"Error loading chunks via KnowledgeBaseLoaderService: {e}")
+                if not Path(self.chunks_path).exists():
+                    raise RuntimeError(f"Failed to load chunks via KnowledgeBaseLoaderService: {e}") from e
 
         try:
             with open(self.chunks_path, "r", encoding="utf-8") as f:
@@ -38,10 +53,18 @@ class VectorStoreInterface:
                         if chunk_id:
                             self.chunk_map[chunk_id] = chunk
 
-            logger.info(f"Loaded {len(self.chunks)} legal passage chunks into VectorStore.")
+            logger.info(f"Loaded {len(self.chunks)} legal passage chunks into VectorStore from file.")
         except Exception as e:
             logger.error(f"Error loading chunks from {self.chunks_path}: {e}")
             raise RuntimeError(f"Failed to load chunks dataset: {e}") from e
+
+    def load_from_knowledge_base(self) -> None:
+        """Explicitly reload vector store using KnowledgeBaseLoaderService."""
+        kb_loader = KnowledgeBaseLoaderService()
+        legal_chunks = kb_loader.chunk_legal_corpus()
+        self.chunks = [c.to_dict() for c in legal_chunks]
+        self.chunk_map = {c["chunk_id"]: c for c in self.chunks}
+        logger.info(f"VectorStore reloaded with {len(self.chunks)} unified legal chunks.")
 
     def get_chunk(self, chunk_id: str) -> Optional[Dict[str, Any]]:
         """Retrieve a specific chunk by its chunk_id."""

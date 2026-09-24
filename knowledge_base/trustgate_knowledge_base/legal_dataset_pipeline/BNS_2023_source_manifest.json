@@ -1,0 +1,17 @@
+{
+  "manifest_version": "1.0.0",
+  "act_name": "Bharatiya Nyaya Sanhita, 2023",
+  "act_number": "45 of 2023",
+  "jurisdiction": "India",
+  "official_authority": "India Code",
+  "official_url": "https://www.indiacode.nic.in/show-data?actid=AC_CEN_5_23_00045_202345_1717505307392",
+  "effective_date": "2024-07-01",
+  "retrieval_date": "2026-08-30",
+  "sections_requested": 39,
+  "sections_collected": 39,
+  "sections_verified": 39,
+  "sections_pending_verification": 0,
+  "failed_sections": [],
+  "verification_status": "VERIFIED",
+  "notes": "Stage 1 official section-level legal data collected from India Code repository."
+}

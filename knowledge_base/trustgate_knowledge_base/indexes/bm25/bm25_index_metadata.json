@@ -6,7 +6,6 @@
   "k1": 1.5,
   "b": 0.75,
   "tokenization": "Deterministic lowercasing, alphanumeric + hyphen preservation, punctuation strip",
-  "created_at": "2026-08-26T16:54:00+05:30",
-  "source_text_sha256": "f0ee026645e589f3ed7aba4cbbbad60a0a5f2b0a428716e845785acb56d32af5",
-  "raw_pdf_sha256": "d4449e9995b21fd52627811d08f9d21feda6a3678b7e5355b651242d152167f5"
+  "created_at": "2026-09-22T17:58:40.728544",
+  "rebuild_status": "SUCCESS"
 }

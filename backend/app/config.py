@@ -18,6 +18,7 @@ class Settings(BaseSettings):
 
     # Ollama Local LLM Settings
     OLLAMA_BASE_URL: str = "http://localhost:11434"
+    GENERATION_MODEL: str = "hf.co/GSMS-B/Indian-Legal-Llama-3.2-3B-GGUF:latest"
     CLAIM_EXTRACTION_MODEL: str = "qwen2.5:3b"
     VERIFICATION_MODEL: str = "gemma3:4b"
 
@@ -33,6 +34,11 @@ class Settings(BaseSettings):
     KB_DENSE_EMBEDDINGS_PATH: Path = KB_ROOT_DIR / "indexes" / "dense" / "dense_embeddings.npy"
     KB_VECTORIZER_PATH: Path = KB_ROOT_DIR / "indexes" / "dense" / "vectorizer.joblib"
     KB_SVD_MODEL_PATH: Path = KB_ROOT_DIR / "indexes" / "dense" / "svd_model.joblib"
+
+    # Legal Sentence Transformer Embedding Settings
+    LEGAL_EMBEDDING_MODEL: str = "shb/legal-embed"
+    KB_LEGAL_DENSE_EMBEDDINGS_PATH: Path = KB_ROOT_DIR / "indexes" / "dense" / "legal_dense_embeddings.npy"
+    KB_LEGAL_DENSE_META_PATH: Path = KB_ROOT_DIR / "indexes" / "dense" / "legal_dense_embeddings_meta.json"
 
     model_config = SettingsConfigDict(
         env_file=".env",

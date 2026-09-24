@@ -5,7 +5,11 @@ import re
 from pathlib import Path
 from collections import Counter
 from typing import List, Dict, Any, Optional
-from app.config import settings
+
+try:
+    from backend.app.config import settings
+except ImportError:
+    from app.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +43,7 @@ class LexicalRetriever:
 
     @staticmethod
     def tokenize(text: str) -> List[str]:
-        """Deterministic legal tokenization."""
+        """Deterministic legal tokenization with normalized whitespace."""
         cleaned = re.sub(r"[^a-zA-Z0-9\s\-]", " ", text.lower())
         tokens = [t.strip("-") for t in cleaned.split() if len(t.strip("-")) > 0]
         return tokens
@@ -67,10 +71,31 @@ class LexicalRetriever:
             self.idf = idx_data.get("idf", {})
             self.doc_len = idx_data.get("doc_len", [])
 
-            # Rebuild doc_freqs from chunks for BM25 term matching
+            # Validation checks (FIX 3)
+            if len(self.chunks) != self.corpus_size:
+                raise ValueError(
+                    f"Corpus chunk count ({len(self.chunks)}) does not match BM25 index corpus_size ({self.corpus_size})."
+                )
+
+            if self.doc_len and len(self.chunks) != len(self.doc_len):
+                raise ValueError(
+                    f"Corpus chunk count ({len(self.chunks)}) does not match BM25 index doc_len count ({len(self.doc_len)})."
+                )
+
+            index_chunk_ids = idx_data.get("chunk_ids")
+            if index_chunk_ids:
+                actual_chunk_ids = [c["chunk_id"] for c in self.chunks]
+                if actual_chunk_ids != index_chunk_ids:
+                    raise ValueError("BM25 index chunk_ids do not match corpus chunk IDs in exact order.")
+
+            # Rebuild doc_freqs from chunks using canonical indexing format (FIX 1)
             self.doc_freqs = []
             for c in self.chunks:
-                text_to_index = f"Section {c['section_number']} {c['section_heading']} {c['chapter_title']} {c['text']}"
+                sec_num = c.get("section_number", "")
+                sec_head = c.get("section_heading", "")
+                chap_title = c.get("chapter_title", "")
+                text_content = c.get("text", "")
+                text_to_index = f"Section {sec_num} {sec_head} {chap_title} {text_content}"
                 self.doc_freqs.append(Counter(self.tokenize(text_to_index)))
 
             logger.info(
@@ -90,6 +115,7 @@ class LexicalRetriever:
 
         query_tokens = self.tokenize(query)
         scores = [0.0] * self.corpus_size
+        avgdl_safe = self.avgdl if self.avgdl > 0 else 1.0
 
         for token in query_tokens:
             if token not in self.idf:
@@ -98,8 +124,9 @@ class LexicalRetriever:
             for idx, df_dict in enumerate(self.doc_freqs):
                 tf = df_dict.get(token, 0)
                 if tf > 0:
+                    d_len = self.doc_len[idx] if idx < len(self.doc_len) else avgdl_safe
                     num = tf * (self.k1 + 1.0)
-                    den = tf + self.k1 * (1.0 - self.b + self.b * (self.doc_len[idx] / self.avgdl))
+                    den = tf + self.k1 * (1.0 - self.b + self.b * (d_len / avgdl_safe))
                     scores[idx] += idf_val * (num / den)
 
         # Sort score descending, tie-break by chunk_id ascending
@@ -117,9 +144,13 @@ class LexicalRetriever:
                 "score": float(round(score, 4)),
                 "bm25_score": float(round(score, 4)),
                 "document_id": chunk.get("document_id", "BNS_2023"),
+                "document_type": chunk.get("document_type", "STATUTE"),
                 "chapter_number": chunk.get("chapter_number", ""),
                 "section_number": chunk.get("section_number", ""),
-                "section_heading": chunk.get("section_heading", ""),
+                "section_heading": chunk.get("section_heading", chunk.get("case_name", "")),
+                "source_authority": chunk.get("source_authority", "India Code"),
+                "source_url": chunk.get("source_url", ""),
+                "verification_status": chunk.get("verification_status", "UNVERIFIED"),
                 "page_start": chunk.get("page_start", 0),
                 "page_end": chunk.get("page_end", 0),
                 "text": chunk.get("text", ""),

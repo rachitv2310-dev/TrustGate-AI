@@ -1,0 +1,11 @@
+{
+  "model_name": "shb/legal-embed",
+  "embedding_dimension": 768,
+  "number_of_chunks": 392,
+  "corpus_path": "C:\\Users\\asus\\OneDrive\\Desktop\\trustgate_ai\\trustgate-ai\\knowledge_base\\trustgate_knowledge_base\\data\\processed\\BNS_2023_chunks.jsonl",
+  "generated_timestamp": "2026-09-22T18:08:55.520023",
+  "matrix_shape": [
+    392,
+    768
+  ]
+}

@@ -3,7 +3,10 @@ from pathlib import Path
 from typing import List, Optional
 import joblib
 import numpy as np
-from app.config import settings
+try:
+    from backend.app.config import settings
+except ImportError:
+    from app.config import settings
 
 logger = logging.getLogger(__name__)
 

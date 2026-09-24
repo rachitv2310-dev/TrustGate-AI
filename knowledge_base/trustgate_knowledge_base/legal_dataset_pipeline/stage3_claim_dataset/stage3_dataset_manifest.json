@@ -1,0 +1,30 @@
+{
+  "manifest_version": "1.0.0",
+  "dataset_name": "TrustGate Stage 3 Legal Claim Verification Dataset",
+  "jurisdiction": "India",
+  "total_records": 120,
+  "total_atomic_claims": 120,
+  "bns_records_count": 85,
+  "supreme_court_records_count": 35,
+  "label_distribution": {
+    "SUPPORTED": 70,
+    "REFUTED": 30,
+    "INSUFFICIENT": 20
+  },
+  "claim_types_distribution": {
+    "LEGAL_PRINCIPLE": 7,
+    "CASE_PRECEDENT": 31,
+    "PUNISHMENT": 15,
+    "SECTION_MAPPING": 38,
+    "LEGAL_DEFINITION": 4,
+    "STATUTORY_FACT": 17,
+    "LEGAL_CONDITION": 8
+  },
+  "stage1_source_file": "legal_dataset_pipeline/BNS_2023_selected_sections.json",
+  "stage2_source_file": "legal_dataset_pipeline/stage2_supreme_court/supreme_court_judgments.json",
+  "validation_failures": 0,
+  "stage1_preservation_status": "FROZEN_UNTOUCHED",
+  "stage2_preservation_status": "FROZEN_UNTOUCHED",
+  "verification_status": "VERIFIED",
+  "notes": "Stage 3 Testing dataset containing 120 atomic claim records across SUPPORTED, REFUTED, and INSUFFICIENT labels."
+}

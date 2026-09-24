@@ -1,0 +1,17 @@
+{
+  "manifest_version": "1.0.0",
+  "dataset_name": "TrustGate Supreme Court Judgment Precedent Dataset",
+  "court": "Supreme Court of India",
+  "jurisdiction": "India",
+  "authority": "Supreme Court of India",
+  "effective_date": "2024-07-01",
+  "retrieval_date": "2026-08-30",
+  "total_judgments_identified": 25,
+  "total_judgments_collected": 25,
+  "total_judgments_verified": 25,
+  "total_judgments_unverified": 0,
+  "total_judgments_pending": 0,
+  "validation_failures": 0,
+  "verification_status": "VERIFIED",
+  "notes": "Stage 2 Supreme Court Precedent Judgment Dataset for BNS 2023 Sections."
+}

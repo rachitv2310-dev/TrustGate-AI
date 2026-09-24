@@ -95,7 +95,8 @@ class BM25Retriever:
             "avgdl": self.avgdl,
             "df": dict(self.df),
             "idf": self.idf,
-            "doc_len": self.doc_len
+            "doc_len": self.doc_len,
+            "chunk_ids": [c["chunk_id"] for c in self.chunks]
         }
         with open(os.path.join(index_dir, "bm25_index.json"), "w", encoding="utf-8") as f:
             json.dump(index_data, f, indent=2)

@@ -1,0 +1,31 @@
+{
+  "total_bns_sections": 39,
+  "total_supreme_court_judgments": 25,
+  "total_stage3_records": 120,
+  "total_atomic_claims": 120,
+  "label_distribution": {
+    "SUPPORTED": 70,
+    "REFUTED": 30,
+    "INSUFFICIENT": 20
+  },
+  "claim_type_distribution": {
+    "SECTION_MAPPING": 38,
+    "STATUTORY_FACT": 17,
+    "LEGAL_DEFINITION": 4,
+    "PUNISHMENT": 15,
+    "LEGAL_CONDITION": 8,
+    "LEGAL_PRINCIPLE": 7,
+    "CASE_PRECEDENT": 31
+  },
+  "evidence_source_distribution": {
+    "BNS_Primary_Law": 85,
+    "Supreme_Court_Precedent": 35
+  },
+  "bns_section_coverage": "39/39 (100.0%)",
+  "sc_judgment_coverage": "21/25 (84.0%)",
+  "duplicate_count": 0,
+  "missing_field_count": 0,
+  "invalid_reference_count": 0,
+  "flagged_record_count": 0,
+  "overall_integrity_score": "100.0%"
+}

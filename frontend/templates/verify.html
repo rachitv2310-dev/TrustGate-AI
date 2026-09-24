@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
 </head>
 
 <body>
@@ -25,98 +25,108 @@
         <div class="portal-card">
             <div class="portal-header">
                 <h2>Verification Portal</h2>
-                <p>Paste your question and AI-generated response below to perform verification.</p>
+                <p>Paste your question and optional AI-generated response below to perform verification.</p>
             </div>
 
-            <form action="/verify" method="POST">
+            <form id="verification-form" onsubmit="return false;">
                 <div class="form-group">
                     <label for="question">
-                        Question
+                        Question <span class="required-asterisk">*</span>
                     </label>
                     <textarea
                         id="question"
                         name="question"
                         rows="4"
-                        placeholder="Enter your question..."
+                        placeholder="Enter your legal question (e.g. What is theft under Bharatiya Nyaya Sanhita 2023?)..."
                     ></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="response">
-                        AI Response
+                        AI Response <span class="optional-tag">(Optional — leave blank to generate)</span>
                     </label>
                     <textarea
                         id="response"
                         name="response"
-                        rows="8"
-                        placeholder="Paste the AI-generated response..."
+                        rows="6"
+                        placeholder="Paste the AI-generated response (optional)..."
                     ></textarea>
                 </div>
 
-                <button type="submit" class="btn-primary btn-submit">
+                <button type="submit" id="btn-submit" class="btn-primary btn-submit">
                     Verify Response
                 </button>
             </form>
         </div>
 
-        {% if result %}
-        <div class="result-box">
+        <!-- Error Message Box -->
+        <div id="error-container" class="result-box error-box" style="display: none;">
+            <div class="status-badge error-badge">
+                <span class="status-icon">&#10060;</span>
+                <span class="status-text"><strong>Status:</strong> Verification Error</span>
+            </div>
+            <div class="error-message">
+                <p id="error-message-text">Verification failed. Please make sure the TrustGate backend is running and try again.</p>
+            </div>
+        </div>
+
+        <!-- Loading State Indicator -->
+        <div id="loading-container" class="result-box loading-box" style="display: none;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h4>Verifying Response...</h4>
+                <p>Extracting atomic claims, retrieving legal evidence, and verifying stance. Please wait...</p>
+            </div>
+        </div>
+
+        <!-- Verification Result Box -->
+        <div id="result-container" class="result-box" style="display: none;">
             <div class="result-header">
                 <h3>Verification Result</h3>
+                <div class="status-badge success-badge">
+                    <span class="status-icon">&#9989;</span>
+                    <span class="status-text"><strong>Status:</strong> Completed</span>
+                </div>
             </div>
 
-            {% if result.success %}
-            <div class="status-badge success-badge">
-                <span class="status-icon">&#9989;</span>
-                <span class="status-text"><strong>Status:</strong> Success</span>
+            <!-- Metrics Summary Grid -->
+            <div class="metrics-grid">
+                <div class="metric-card metric-trust">
+                    <div class="metric-label">Trust Score</div>
+                    <div class="metric-value" id="trust-score-value">0 / 100</div>
+                    <div class="metric-subtext">Overall Claim Verification Rate</div>
+                </div>
+                <div class="metric-card metric-hallucination">
+                    <div class="metric-label">Hallucination %</div>
+                    <div class="metric-value" id="hallucination-value">0%</div>
+                    <div class="metric-subtext">Contradicted/Unverified Rate</div>
+                </div>
             </div>
 
             <div class="result-content">
                 <div class="result-item">
                     <span class="result-label">Question</span>
-                    <div class="result-text">{{ result.question }}</div>
+                    <div class="result-text" id="result-question"></div>
                 </div>
 
                 <div class="result-item">
-                    <span class="result-label">AI Response</span>
-                    <div class="result-text">{{ result.response }}</div>
+                    <span class="result-label">Generated / Verified AI Response</span>
+                    <div class="result-text" id="result-response"></div>
                 </div>
 
                 <div class="result-item">
-                    <span class="result-label">Extracted Claims</span>
-                    {% if result.claims and result.claims|length > 0 %}
-                    <div class="claims-container">
-                        {% for claim in result.claims %}
-                        <div class="claim-card">
-                            <span class="claim-text">{{ claim.text }}</span>
-                            <span class="claim-badge claim-badge-{{ claim.type | lower }}">{{ claim.type }}</span>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    {% else %}
-                    <div class="no-claims-message">
-                        No verifiable claims were extracted from this response.
-                    </div>
-                    {% endif %}
+                    <span class="result-label">Extracted & Verified Claims</span>
+                    <div id="claims-container" class="claims-container"></div>
                 </div>
             </div>
-
-            {% else %}
-            <div class="status-badge error-badge">
-                <span class="status-icon">&#10060;</span>
-                <span class="status-text"><strong>Status:</strong> Failed</span>
-            </div>
-
-            <div class="result-content">
-                <div class="result-item error-message">
-                    <p>{{ result.message }}</p>
-                </div>
-            </div>
-            {% endif %}
         </div>
-        {% endif %}
     </section>
 </main>
 
+<footer class="footer">
+    <p>TrustGate-AI &copy; 2026 — Intelligent Legal AI Verification System</p>
+</footer>
+
+<script src="{{ url_for('static', path='js/script.js') }}"></script>
 </body>
 </html>
